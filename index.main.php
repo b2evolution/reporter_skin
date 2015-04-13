@@ -32,6 +32,7 @@ skin_include( '_html_header.inc.php', array(
 	             .'<html lang="'.locale_lang( false ).'">',
 ) );
 // Note: You can customize the default HTML header by copying the generic
+siteskin_include( '_html_header.inc.php' );
 // /skins/_html_header.inc.php file into the current skin folder.
 // -------------------------------- END OF HEADER --------------------------------
 
@@ -72,7 +73,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				// The following params will be used as defaults for widgets included in this container:
 				'block_start'       => '<div class="widget $wi_class$">',
 				'block_end'         => '</div>',
-				'block_title_start' => '<h1>',
+				'block_title_start' => '<h1 class="title_site">',
 				'block_title_end'   => '</h1>',
 			) );
 		// ----------------------------- END OF "Header" CONTAINER -----------------------------

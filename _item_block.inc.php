@@ -116,6 +116,9 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 		// -------------------------- END OF POST CONTENT -------------------------
 	?>
 
+	<!-- Add container to feedback -->
+	<div class="container">
+
 	<?php
 		// List all tags attached to this post:
 		$Item->tags( array(
@@ -167,4 +170,8 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 		locale_restore_previous();	// Restore previous locale (Blog locale)
 	?>
 </div>
+
+<!-- End Container feedback -->
+</div>
+
 <?php echo '</div>'; // End of post display ?>
