@@ -214,7 +214,7 @@ switch( $content_mode )
 
 		if( $params['content_display_full'] )
 		{
-			echo '<div class="bText col-md-8 col-md-offset-2">';
+			echo '<div class="bText">';
 
 			// URL link, if the post has one:
 			$Item->url_link( array(

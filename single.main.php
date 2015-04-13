@@ -116,10 +116,6 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <!-- =================================== START OF MAIN AREA =================================== -->
 
-<!-- Container Main Area -->
-<div class="container-fluid">
-
-  <div class="row">
 
   <!-- Post Link Container -->
   <div class="container">
@@ -138,11 +134,42 @@ siteskin_include( '_site_body_header.inc.php' );
   </div>
   <!-- end Post Link Container -->
 
-    <div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-9' ); ?>"<?php
+  <!-- Main Full Image  -->
+  <div class="single_bg" style="background-image:url('https://ununsplash.imgix.net/photo-1427348693976-99e4aca06bb9?q=75&fm=jpg&w=1080&fit=max&s=329d7de28fe193b2c35b9d2f9755a984');">
+    <!-- <h2 class="entry-title-full">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h2> -->
+    <?php
+    // ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
+    request_title( array(
+        'title_before'      => '<h2 class="entry-title-full">',
+        'title_after'       => '</h2>',
+        'title_none'        => '',
+        'glue'              => ' - ',
+        'title_single_disp' => true,
+        'format'            => 'htmlbody',
+        'register_text'     => '',
+        'login_text'        => '',
+        'lostpassword_text' => '',
+        'account_activation' => '',
+        'msgform_text'      => '',
+      ) );
+    // ----------------------------- END OF REQUEST TITLE ----------------------------
+    ?>
+
+    <div class="divider"></div>
+  </div>
+  <!-- End Main Full Image -->
+
+
+<!-- Container Main Area -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-8 col-md-offset-2 ' : 'col-md-9' ); ?>"<?php
         echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
 
       <!-- Add Row for Full Width-->
-      <div class="row">
+      <!-- <div class="row"> -->
 
   <?php
   if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo' ) ) )
@@ -156,23 +183,7 @@ siteskin_include( '_site_body_header.inc.php' );
   }
   ?>
 
-  <?php
-    // ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
-    request_title( array(
-        'title_before'      => '<h2 class="entry-title">',
-        'title_after'       => '</h2>',
-        'title_none'        => '',
-        'glue'              => ' - ',
-        'title_single_disp' => true,
-        'format'            => 'htmlbody',
-        'register_text'     => '',
-        'login_text'        => '',
-        'lostpassword_text' => '',
-        'account_activation' => '',
-        'msgform_text'      => '',
-      ) );
-    // ----------------------------- END OF REQUEST TITLE ----------------------------
-  ?>
+
 
   <?php
   // Go Grab the featured post:
@@ -404,11 +415,15 @@ siteskin_include( '_site_body_header.inc.php' );
   ?>
 
       <!-- End Row -->
-      </div>
+      <!-- </div> -->
 
     </div>
   <?php } ?>
   </div>
+
+  <!-- End Container Main Area -->
+  </div>
+</div>
 
 
 <!-- =================================== START OF FOOTER =================================== -->

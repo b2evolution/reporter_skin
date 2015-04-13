@@ -14,7 +14,7 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 ?>
 
   <!-- End Container Main Area -->
-  </div>
+  <!-- </div> -->
 
 
 <!-- End of skin_wrapper -->

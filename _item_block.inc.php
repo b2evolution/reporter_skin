@@ -37,7 +37,7 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 		if( $disp != 'single' && $disp != 'page' )
 		{ // Don't display this on disp=single because there is already title header in h2
 
-			$title_before = '<h2>';
+			$title_before = '<h2 class="title_posts">';
 			$title_after = '</h2>';
 			if( $Item->is_intro() )
 			{ // Display a link to edit the post only for intro post, because for all other posts it is displayed below under title
@@ -75,7 +75,7 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 
 		// We want to display the post time:
 		$Item->issue_time( array(
-				'before'      => ' '.T_('posted on '),
+				'before'      => ' '.T_('Posted on '),
 				'after'       => ' ',
 				'time_format' => 'M j, Y',
 			) );
@@ -103,6 +103,7 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 			'after'     => '',
 		) );
 	?>
+
 	</div>
 	<?php
 	}
@@ -116,8 +117,6 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 		// -------------------------- END OF POST CONTENT -------------------------
 	?>
 
-	<!-- Add container to feedback -->
-	<div class="container">
 
 	<?php
 		// List all tags attached to this post:
@@ -171,7 +170,5 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 	?>
 </div>
 
-<!-- End Container feedback -->
-</div>
 
 <?php echo '</div>'; // End of post display ?>

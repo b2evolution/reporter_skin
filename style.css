@@ -54,7 +54,7 @@ body#reporter_skin {
   .pageHeader .title_site a {
     color: #333333;
     text-transform: uppercase;
-    font-weight: 700; }
+    font-weight: 900; }
     .pageHeader .title_site a:hover {
       text-decoration: none; }
 
@@ -275,14 +275,7 @@ form.bComment {
   .bPost .bTitle {
     margin: 0; }
   .bPost .small.text-muted {
-    margin: 4px 0 10px;
-    position: absolute;
-    top: 320px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: #FFF;
-    font-size: 16px; }
+    margin: 10px 0 20px; }
     .bPost .small.text-muted a, .bPost .small.text-muted a .glyphicon {
       color: inherit; }
 
@@ -404,21 +397,26 @@ div.action_messages, div.log_container {
     vertical-align: middle; }
 
 /* ------------------------------------
+    Style Posts
+--------------------------------------*/
+h2.title_posts {
+  font-weight: 900; }
+  h2.title_posts a {
+    color: #333333; }
+
+.bMore {
+  font-size: 14px; }
+
+/* ------------------------------------
     Style Content
 --------------------------------------*/
-.entry-title {
-  position: absolute;
-  top: 250px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 45px;
-  font-weight: bold; }
+body#reporter_skin .pager li > a
+body#reporter_skin, .pager li > span {
+  border-radius: 50px; }
 
-.content_full .image_block img {
-  width: 100%; }
+.entry-title {
+  font-weight: 900; }
+
 .content_full .bText {
   letter-spacing: 0.6px;
   font-size: 18px;
@@ -427,5 +425,54 @@ div.action_messages, div.log_container {
   line-height: 1.8; }
   .content_full .bText p {
     margin: 0 0 20px; }
+
+.bPost_disp_single .text-muted {
+  font-size: 16px; }
+
+/* ------------------------------------
+    Single Full Width Background
+--------------------------------------*/
+.single_bg {
+  margin: 30px 0;
+  height: 620px;
+  max-height: 100%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+  .single_bg .entry-title-full {
+    position: absolute;
+    top: 32%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 45px;
+    font-weight: 900;
+    z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 60px;
+    padding: 0 30px; }
+  .single_bg .divider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 0; }
+
+/* ------------------------------------
+    Responsive
+--------------------------------------*/
+@media only screen and (max-width: 40em) {
+  .single_bg .entry-title-full {
+    font-size: 2.3em;
+    padding: 0 30px; }
+
+  .content_full .bText {
+    letter-spacing: 0.6px;
+    font-size: 1em;
+    line-height: 1.6; } }
 
 /*# sourceMappingURL=style.css.map */
