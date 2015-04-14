@@ -1,2 +1,2 @@
 # Reporter
-Skin Blog b2evolution
+Reporter skin for b2evolution CMS
