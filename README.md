@@ -1,2 +1,3 @@
-# Reporter
-Reporter skin for b2evolution CMS
+# Reporter Blog Skin
+
+This is a skin for b2evolution CMS v6
