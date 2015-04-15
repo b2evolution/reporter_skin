@@ -16,9 +16,7 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
   <!-- End Container Main Area -->
   <!-- </div> -->
 
-
-<!-- End of skin_wrapper -->
-</div>
+</div> <!-- End of skin_wrapper -->
 
 <?php
 	modules_call_method( 'SkinEndHtmlBody' );

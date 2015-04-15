@@ -110,7 +110,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <!-- =================================== START OF MAIN AREA =================================== -->
 	<div class="row">
-		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-9' ); ?>"<?php
+		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-7 ' ); ?>"<?php
 				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
 
 	<?php
@@ -124,20 +124,6 @@ siteskin_include( '_site_body_header.inc.php' );
 		// --------------------------------- END OF MESSAGES ---------------------------------
 	}
 	?>
-
-	<?php
-		// ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
-		item_prevnext_links( array(
-				'block_start' => '<ul class="pager">',
-				'prev_start'  => '<li class="previous">',
-				'prev_end'    => '</li>',
-				'next_start'  => '<li class="next">',
-				'next_end'    => '</li>',
-				'block_end'   => '</ul>',
-			) );
-		// ------------------------- END OF PREV/NEXT POST LINKS -------------------------
-	?>
-
 
 	<?php
 		// ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
@@ -172,20 +158,6 @@ siteskin_include( '_site_body_header.inc.php' );
 		echo '</div></div>';
 		// ----------------------------END ITEM BLOCK  ----------------------------
 	}
-	?>
-
-	<?php
-	if( $disp != 'front' && $disp != 'download' && $disp != 'search' )
-	{
-		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-		mainlist_page_links( array(
-				'block_start' => '<div class="center"><ul class="pagination">',
-				'block_end' => '</ul></div>',
-				'page_current_template' => '<span><b>$page_num$</b></span>',
-				'page_item_before' => '<li>',
-				'page_item_after' => '</li>',
-			) );
-		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	?>
 
 
@@ -244,7 +216,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				'next_text' => '&gt;&gt;',
 			) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
-	}
+
 	?>
 
 
@@ -348,7 +320,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	{
 	?>
 <!-- =================================== START OF SIDEBAR =================================== -->
-		<div class="col-md-3"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
+		<div class="col-md-4 <?php echo ( $Skin->get_setting( 'layout' ) == 'right_sidebar' ? 'col-md-offset-1' : '' ); ?> "<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
 
 	<?php
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------

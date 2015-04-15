@@ -43,101 +43,45 @@ siteskin_include( '_site_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
 ?>
 
-<!-- container Page Top -->
-<div class="container">
 
-  <div class="row">
-    <div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
-      <div class="PageTop">
-  <?php
-    // ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
-    // Display container and contents:
-    skin_container( NT_('Page Top'), array(
-        // The following params will be used as defaults for widgets included in this container:
-        'block_start'         => '<div class="widget $wi_class$">',
-        'block_end'           => '</div>',
-        'block_display_title' => false,
-        'list_start'          => '<ul>',
-        'list_end'            => '</ul>',
-        'item_start'          => '<li>',
-        'item_end'            => '</li>',
-      ) );
-    // ----------------------------- END OF "Page Top" CONTAINER -----------------------------
-  ?>
-      </div>
-    </div>
-    <div class="coll-xs-12 col-sm-12 col-md-8 col-md-pull-4">
-      <div class="pageHeader">
-  <?php
-    // ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-    // Display container and contents:
-    skin_container( NT_('Header'), array(
-        // The following params will be used as defaults for widgets included in this container:
-        'block_start'       => '<div class="widget $wi_class$">',
-        'block_end'         => '</div>',
-        'block_title_start' => '<h1 class="title_site">',
-        'block_title_end'   => '</h1>',
-      ) );
-    // ----------------------------- END OF "Header" CONTAINER -----------------------------
-  ?>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="nav nav-tabs">
-  <?php
-    // ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-    // Display container and contents:
-    // Note: this container is designed to be a single <ul> list
-    skin_container( NT_('Menu'), array(
-        // The following params will be used as defaults for widgets included in this container:
-        'block_start'         => '',
-        'block_end'           => '',
-        'block_display_title' => false,
-        'list_start'          => '',
-        'list_end'            => '',
-        'item_start'          => '<li>',
-        'item_end'            => '</li>',
-        'item_selected_start' => '<li class="active">',
-        'item_selected_end'   => '</li>',
-        'item_title_before'   => '',
-        'item_title_after'    => '',
-      ) );
-    // ----------------------------- END OF "Menu" CONTAINER -----------------------------
-  ?>
-      </ul>
-    </div>
-  </div>
-
-  <!-- End container PageTop -->
-  </div>
-
-<!-- =================================== START OF MAIN AREA =================================== -->
-
-
-  <!-- Post Link Container -->
-  <div class="container">
-  <?php
-    // ------------------- PREV/NEXT POST LINKS (SINGLE POST MODE) -------------------
-    item_prevnext_links( array(
-        'block_start' => '<ul class="pager">',
-        'prev_start'  => '<li class="previous">',
-        'prev_end'    => '</li>',
-        'next_start'  => '<li class="next">',
-        'next_end'    => '</li>',
-        'block_end'   => '</ul>',
-      ) );
-    // ------------------------- END OF PREV/NEXT POST LINKS -------------------------
-  ?>
-  </div>
-  <!-- end Post Link Container -->
+<header id="single_header">
 
   <!-- Main Full Image  -->
-  <div class="single_bg" style="background-image:url('https://ununsplash.imgix.net/photo-1427348693976-99e4aca06bb9?q=75&fm=jpg&w=1080&fit=max&s=329d7de28fe193b2c35b9d2f9755a984');">
-    <!-- <h2 class="entry-title-full">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</h2> -->
-    <?php
+  <div class="single_bg" style="background-image:url('https://unsplash.imgix.net/photo-1421977870504-378093748ae6?fit=crop&fm=jpg&h=700&q=75&w=1050');">
+
+  <!-- container Page Top -->
+  <div class="single_menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs">
+      <?php
+        // ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+        // Display container and contents:
+        // Note: this container is designed to be a single <ul> list
+        skin_container( NT_('Menu'), array(
+            // The following params will be used as defaults for widgets included in this container:
+            'block_start'         => '',
+            'block_end'           => '',
+            'block_display_title' => false,
+            'list_start'          => '',
+            'list_end'            => '',
+            'item_start'          => '<li>',
+            'item_end'            => '</li>',
+            'item_selected_start' => '<li class="active">',
+            'item_selected_end'   => '</li>',
+            'item_title_before'   => '',
+            'item_title_after'    => '',
+          ) );
+        // ----------------------------- END OF "Menu" CONTAINER -----------------------------
+      ?>
+          </ul>
+        </div> <!-- end col-md-12 -->
+      </div> <!-- end row -->
+    </div><!-- End container PageTop -->
+  </div> <!-- End Single Menu -->
+
+  <?php
     // ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
     request_title( array(
         'title_before'      => '<h2 class="entry-title-full">',
@@ -159,17 +103,17 @@ siteskin_include( '_site_body_header.inc.php' );
   </div>
   <!-- End Main Full Image -->
 
+</header>
+<!-- End Single Header -->
+
+<!-- =================================== START OF MAIN AREA =================================== -->
 
 <!-- Container Main Area -->
 <div class="container">
 
   <div class="row">
 
-    <div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-8 col-md-offset-2 ' : 'col-md-9' ); ?>"<?php
-        echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
-
-      <!-- Add Row for Full Width-->
-      <!-- <div class="row"> -->
+    <div class="col-md-8 col-md-offset-2 ">
 
   <?php
   if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo' ) ) )
@@ -371,60 +315,9 @@ siteskin_include( '_site_body_header.inc.php' );
   ?>
 
     </div>
-  <?php
-  if( $Skin->get_setting( 'layout' ) != 'single_column' )
-  {
-  ?>
-<!-- =================================== START OF SIDEBAR =================================== -->
-    <div class="col-md-3"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
 
-  <?php
-    // ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
-    // Display container contents:
-    skin_container( NT_('Sidebar'), array(
-        // The following (optional) params will be used as defaults for widgets included in this container:
-        // This will enclose each widget in a block:
-        'block_start' => '<div class="panel panel-default widget $wi_class$">',
-        'block_end' => '</div>',
-        // This will enclose the title of each widget:
-        'block_title_start' => '<div class="panel-heading"><h4 class="panel-title">',
-        'block_title_end' => '</h4></div>',
-        // This will enclose the body of each widget:
-        'block_body_start' => '<div class="panel-body">',
-        'block_body_end' => '</div>',
-        // If a widget displays a list, this will enclose that list:
-        'list_start' => '<ul>',
-        'list_end' => '</ul>',
-        // This will enclose each item in a list:
-        'item_start' => '<li>',
-        'item_end' => '</li>',
-        // This will enclose sub-lists in a list:
-        'group_start' => '<ul>',
-        'group_end' => '</ul>',
-        // This will enclose (foot)notes:
-        'notes_start' => '<div class="notes">',
-        'notes_end' => '</div>',
-        // Widget 'Search form':
-        'search_class'         => 'compact_search_form',
-        'search_input_before'  => '<div class="input-group">',
-        'search_input_after'   => '',
-        'search_submit_before' => '<span class="input-group-btn">',
-        'search_submit_after'  => '</span></div>',
-      ) );
-    // ----------------------------- END OF "Sidebar" CONTAINER -----------------------------
-  ?>
-
-      <!-- End Row -->
-      <!-- </div> -->
-
-    </div>
-  <?php } ?>
-  </div>
-
-  <!-- End Container Main Area -->
-  </div>
-</div>
-
+    </div> <!-- end row -->
+  </div> <!-- End Container Main Area -->
 
 <!-- =================================== START OF FOOTER =================================== -->
 <!-- Container Footer -->
