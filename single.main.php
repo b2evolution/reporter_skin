@@ -47,34 +47,34 @@ siteskin_include( '_site_body_header.inc.php' );
 <header id="single_header">
 
   <!-- Main Full Image  -->
-  <div class="single_bg" style="background-image:url('https://unsplash.imgix.net/photo-1421977870504-378093748ae6?fit=crop&fm=jpg&h=700&q=75&w=1050');">
+  <div class="single_bg" style="background-image:url('https://unsplash.imgix.net/photo-1421930451953-73c5c9ae9abf?fit=crop&fm=jpg&h=725&q=75&w=1050');">
 
   <!-- container Page Top -->
   <div class="single_menu">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <ul class="nav nav-tabs">
-      <?php
-        // ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-        // Display container and contents:
-        // Note: this container is designed to be a single <ul> list
-        skin_container( NT_('Menu'), array(
-            // The following params will be used as defaults for widgets included in this container:
-            'block_start'         => '',
-            'block_end'           => '',
-            'block_display_title' => false,
-            'list_start'          => '',
-            'list_end'            => '',
-            'item_start'          => '<li>',
-            'item_end'            => '</li>',
-            'item_selected_start' => '<li class="active">',
-            'item_selected_end'   => '</li>',
-            'item_title_before'   => '',
-            'item_title_after'    => '',
-          ) );
-        // ----------------------------- END OF "Menu" CONTAINER -----------------------------
-      ?>
+          <ul class="nav nav-tabs single_nav">
+            <?php
+              // ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+              // Display container and contents:
+              // Note: this container is designed to be a single <ul> list
+              skin_container( NT_('Menu'), array(
+                  // The following params will be used as defaults for widgets included in this container:
+                  'block_start'         => '',
+                  'block_end'           => '',
+                  'block_display_title' => false,
+                  'list_start'          => '',
+                  'list_end'            => '',
+                  'item_start'          => '<li>',
+                  'item_end'            => '</li>',
+                  'item_selected_start' => '<li class="active">',
+                  'item_selected_end'   => '</li>',
+                  'item_title_before'   => '',
+                  'item_title_after'    => '',
+                ) );
+              // ----------------------------- END OF "Menu" CONTAINER -----------------------------
+            ?>
           </ul>
         </div> <!-- end col-md-12 -->
       </div> <!-- end row -->
