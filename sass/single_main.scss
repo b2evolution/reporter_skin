@@ -1,0 +1,272 @@
+/* ------------------------------------
+    Style Content
+--------------------------------------*/
+
+#single_header{
+  // margin-top: -10px;
+}
+
+body#reporter_skin .pager li > a
+body#reporter_skin, .pager li > span {
+  border-radius: 50px;
+}
+
+.entry-title {
+  font-weight: 900;
+}
+
+.content_full{
+  margin-bottom: 30px;
+
+
+  .image_block img{
+    // width: 100%;
+  }
+
+
+  .bText{
+    letter-spacing: 0;
+    font-size: 18px;
+    font-family: "Merriweather", sans-serif;
+    color: #515151;
+    line-height: 1.8;
+
+    p{
+      margin: 0 0 30px;
+    }
+  }
+}
+
+.bPost_disp_single{
+
+  .text-muted{
+    font-size: 16px;
+  }
+
+}
+
+
+/* ------------------------------------
+    Menu
+--------------------------------------*/
+.single_menu{
+  background: #fff;
+
+  .single_nav{
+    border-bottom: none;
+
+    & > li > a{
+      text-transform: uppercase;
+      color: rgba(51, 51, 51, 0.50);
+      font-weight: 700;
+      letter-spacing: 0px;
+      font-size: 15px;
+
+      &:hover{
+        color: #333333;
+        border-radius: 50px;
+        border-bottom: none;
+      }
+    }
+  }
+
+}
+
+
+/* ------------------------------------
+    Single Full Width Background
+--------------------------------------*/
+
+.single_bg{
+  margin: 0 0 30px;
+  height: 660px;
+  max-height: 100%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 25%;
+  overflow: hidden;
+
+  .entry-title-full{
+    color: #fff;
+    font-weight: 900;
+    font-size: 60px;
+    text-transform: capitalize;
+    position: absolute;
+    top: 32%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  .divider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.4);
+    z-index: 0;
+  }
+
+}
+
+/* ------------------------------------
+    Style Image Legend
+--------------------------------------*/
+
+.bPost_disp_single {
+
+    .image_legend{
+      color: #B2B2B2;
+      font-size: 14px;
+      font-style: italic;
+      line-height: 1.4;
+      font-family: "Lato", sans-serif;
+      padding-bottom: 15px;
+    }
+  }
+
+// Large screens
+@media only screen and (min-width: 1200px){
+
+  .bPost_disp_single {
+
+    .image_block{
+      position: relative;
+    }
+
+    .image_legend{
+      position: absolute;
+      left: -30%;
+      top: 0;
+      width: 200px;
+      color: #B2B2B2;
+      font-size: 14px;
+      font-style: italic;
+      text-align: right;
+      line-height: 1.4;
+      font-family: "Lato", sans-serif;
+      padding-top: 15px;
+
+      &::before{
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 1px;
+        background-color: #D0D0D0;
+        top: 3px;
+        right: 0;
+      }
+    }
+  }
+
+} /* min-width 1025px, large screens */
+
+
+/* ------------------------------------
+    Typograpy
+--------------------------------------*/
+
+
+.bPost_disp_single {
+
+  h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+    color: #333;
+    padding-top: 15px;
+  }
+
+  blockquote{
+    border: none;
+    margin: 2.5em 0em 1.5em;
+    padding: 10px 0px;
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    color: #989898;
+    position: relative;
+    background: transparent;
+
+    p{
+      margin-bottom: 0;
+    }
+
+    &::before{
+      font: normal normal normal 14px/1 FontAwesome;
+      text-rendering: auto;
+      content: "\f10d";
+      position: absolute;
+      top: -18px;
+      left: -10px;
+      font-size: 22px;
+    }
+  }
+}
+
+/* ------------------------------------
+    Responsive
+--------------------------------------*/
+
+// Small screens
+@media only screen {
+
+
+} /* Define mobile styles */
+
+@media only screen and (max-width: 40em) { } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+// Medium screens
+@media only screen and (min-width: 40.063em) {
+
+} /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+
+} /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+// Large screens
+@media only screen and (min-width: 64.063em) {
+
+} /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+
+} /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+// XLarge screens
+@media only screen and (min-width: 90.063em) {
+
+} /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {
+
+} /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+// XXLarge screens
+@media only screen and (min-width: 120.063em) {
+
+} /* min-width 1921px, xxlarge screens */
+
+
+@media only screen and (max-width: 40em) {
+
+  .single_bg{
+
+    .entry-title-full{
+      font-size: 2.3em;
+      padding: 0 30px;
+    }
+  }
+
+  .content_full .bText {
+    letter-spacing: 0.6px;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+}
