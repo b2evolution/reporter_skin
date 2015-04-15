@@ -68,7 +68,7 @@ body#reporter_skin, .pager li > span {
     color: #515151;
     line-height: 1.8; }
     .content_full .bText p {
-      margin: 0 0 20px; }
+      margin: 0 0 30px; }
 
 .bPost_disp_single .text-muted {
   font-size: 16px; }
@@ -163,6 +163,10 @@ body#reporter_skin, .pager li > span {
 /* ------------------------------------
     Typograpy
 --------------------------------------*/
+.bPost_disp_single h1, .bPost_disp_single h2, .bPost_disp_single h3, .bPost_disp_single h4, .bPost_disp_single h5, .bPost_disp_single h6 {
+  font-weight: bold;
+  color: #333;
+  padding-top: 15px; }
 .bPost_disp_single blockquote {
   border: none;
   margin: 2.5em 0em 1.5em;
