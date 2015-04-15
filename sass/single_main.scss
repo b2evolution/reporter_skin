@@ -30,10 +30,6 @@ body#reporter_skin, .pager li > span {
     font-family: "Merriweather", sans-serif;
     color: #515151;
     line-height: 1.8;
-
-    p{
-      margin: 0 0 30px;
-    }
   }
 }
 
@@ -54,6 +50,7 @@ body#reporter_skin, .pager li > span {
 
   .single_nav{
     border-bottom: none;
+    margin-bottom: 12px;
 
     & > li > a{
       text-transform: uppercase;
@@ -79,7 +76,7 @@ body#reporter_skin, .pager li > span {
 
 .single_bg{
   margin: 0 0 30px;
-  height: 660px;
+  height: 680px;
   max-height: 100%;
   position: relative;
   background-size: cover;
