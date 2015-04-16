@@ -78,7 +78,7 @@
     .search_field{
       height: 40px;
       border-radius: 50px;
-      width: 300px;
+      // width: 300px;
     }
 
     .input-group-btn{
@@ -96,6 +96,22 @@
       }
     }
 
+  }
+}
+
+.disp_posts{
+
+  .search{
+
+    .compact_search_form{
+      position: relative;
+
+      .search_field{
+        height: 40px;
+        border-radius: 50px;
+        width: 300px;
+      }
+    }
   }
 }
 

@@ -272,8 +272,7 @@ h2.title_posts {
   position: relative; }
   .search .compact_search_form .search_field {
     height: 40px;
-    border-radius: 50px;
-    width: 300px; }
+    border-radius: 50px; }
   .search .compact_search_form .input-group-btn .search_submit {
     position: absolute;
     right: 15px;
@@ -284,6 +283,13 @@ h2.title_posts {
     z-index: 999;
     font-weight: 900;
     text-transform: uppercase; }
+
+.disp_posts .search .compact_search_form {
+  position: relative; }
+  .disp_posts .search .compact_search_form .search_field {
+    height: 40px;
+    border-radius: 50px;
+    width: 300px; }
 
 /* ------------------------------------
     Widget Categories
