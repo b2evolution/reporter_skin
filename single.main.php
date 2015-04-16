@@ -81,23 +81,33 @@ siteskin_include( '_site_body_header.inc.php' );
     </div><!-- End container PageTop -->
   </div> <!-- End Single Menu -->
 
-  <?php
-    // ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
-    request_title( array(
-        'title_before'      => '<h2 class="entry-title-full">',
-        'title_after'       => '</h2>',
-        'title_none'        => '',
-        'glue'              => ' - ',
-        'title_single_disp' => true,
-        'format'            => 'htmlbody',
-        'register_text'     => '',
-        'login_text'        => '',
-        'lostpassword_text' => '',
-        'account_activation' => '',
-        'msgform_text'      => '',
-      ) );
-    // ----------------------------- END OF REQUEST TITLE ----------------------------
-    ?>
+  <div class="single_bg_content">
+
+      <?php
+        // ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
+        request_title( array(
+            'title_before'      => '<h2 class="entry-title-full">',
+            'title_after'       => '<span></span></h2>',
+            'title_none'        => '',
+            'glue'              => ' - ',
+            'title_single_disp' => true,
+            'format'            => 'htmlbody',
+            'register_text'     => '',
+            'login_text'        => '',
+            'lostpassword_text' => '',
+            'account_activation' => '',
+            'msgform_text'      => '',
+          ) );
+        // ----------------------------- END OF REQUEST TITLE ----------------------------
+        ?>
+        <p> By
+          <?php
+              $Item->author( array(
+              'link_text' => $params['author_link_text'],
+            ) );
+           ?>
+        </p>
+  </div>
 
     <div class="divider"></div>
   </div>
@@ -110,9 +120,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <!-- Container Main Area -->
 <div class="container">
-
   <div class="row">
-
     <div class="col-md-8 col-md-offset-2 ">
 
   <?php
@@ -126,8 +134,6 @@ siteskin_include( '_site_body_header.inc.php' );
     // --------------------------------- END OF MESSAGES ---------------------------------
   }
   ?>
-
-
 
   <?php
   // Go Grab the featured post:
@@ -325,65 +331,69 @@ siteskin_include( '_site_body_header.inc.php' );
 
   <div class="row">
     <div class="col-md-12 center">
-  <?php
-    // Display container and contents:
-    skin_container( NT_("Footer"), array(
-        // The following params will be used as defaults for widgets included in this container:
-      ) );
-    // Note: Double quotes have been used around "Footer" only for test purposes.
-  ?>
-  <p>
-    <?php
-      // Display footer text (text can be edited in Blog Settings):
-      $Blog->footer_text( array(
-          'before'      => '',
-          'after'       => ' &bull; ',
-        ) );
 
-    // TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
-    ?>
+    <div class="main_footer">
+      <?php
+        // Display container and contents:
+        skin_container( NT_("Footer"), array(
+            // The following params will be used as defaults for widgets included in this container:
+          ) );
+        // Note: Double quotes have been used around "Footer" only for test purposes.
+      ?>
 
-    <?php
-      // Display a link to contact the owner of this blog (if owner accepts messages):
-      $Blog->contact_link( array(
-          'before'      => '',
-          'after'       => ' &bull; ',
-          'text'   => T_('Contact'),
-          'title'  => T_('Send a message to the owner of this blog...'),
-        ) );
-      // Display a link to help page:
-      $Blog->help_link( array(
-          'before'      => ' ',
-          'after'       => ' ',
-          'text'        => T_('Help'),
-        ) );
-    ?>
+      <p>
+        <?php
+          // Display footer text (text can be edited in Blog Settings):
+          $Blog->footer_text( array(
+              'before'      => '',
+              'after'       => ' &bull; ',
+            ) );
 
-    <?php
-      // Display additional credits:
-      // If you can add your own credits without removing the defaults, you'll be very cool :))
-      // Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
-      credits( array(
-          'list_start'  => '&bull;',
-          'list_end'    => ' ',
-          'separator'   => '&bull;',
-          'item_start'  => ' ',
-          'item_end'    => ' ',
-        ) );
-    ?>
-  </p>
+        // TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
+        ?>
 
-  <?php
-    // Please help us promote b2evolution and leave this logo on your blog:
-    powered_by( array(
-        'block_start' => '<div class="powered_by">',
-        'block_end'   => '</div>',
-        // Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
-        'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
-        'img_width'   => 120,
-        'img_height'  => 32,
-      ) );
-  ?>
+        <?php
+          // Display a link to contact the owner of this blog (if owner accepts messages):
+          $Blog->contact_link( array(
+              'before'      => '',
+              'after'       => ' &bull; ',
+              'text'   => T_('Contact'),
+              'title'  => T_('Send a message to the owner of this blog...'),
+            ) );
+          // Display a link to help page:
+          $Blog->help_link( array(
+              'before'      => ' ',
+              'after'       => ' ',
+              'text'        => T_('Help'),
+            ) );
+        ?>
+
+        <?php
+          // Display additional credits:
+          // If you can add your own credits without removing the defaults, you'll be very cool :))
+          // Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
+          credits( array(
+              'list_start'  => '&bull;',
+              'list_end'    => ' ',
+              'separator'   => '&bull;',
+              'item_start'  => ' ',
+              'item_end'    => ' ',
+            ) );
+        ?>
+      </p>
+
+      <?php
+        // Please help us promote b2evolution and leave this logo on your blog:
+        powered_by( array(
+            'block_start' => '<div class="powered_by">',
+            'block_end'   => '</div>',
+            // Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
+            'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
+            'img_width'   => 120,
+            'img_height'  => 32,
+          ) );
+      ?>
+  </div> <!-- End Main_footer -->
 
     </div>
   </div>

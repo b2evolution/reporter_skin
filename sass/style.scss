@@ -99,10 +99,10 @@ body#reporter_skin{
   margin-bottom: 20px;
 
   li.active > a{
-    background-color: #eeeeee;
+    background-color: #32B9D2;
     border: none;
     border-radius: 50px;
-    color: #333333;
+    color: #fff;
   }
 
   & > li > a{
@@ -114,7 +114,8 @@ body#reporter_skin{
     font-size: 15px;
 
     &:hover{
-      color: #333333;
+      color: #fff;
+      background: #32B9D2;
       border-radius: 50px;
       border-bottom: none;
     }
@@ -369,10 +370,6 @@ form.bComment {
     margin-bottom: 0;
   }
 
-  legend {
-    padding: 0 10px;
-  }
-
   div.form-group, div.custom_content {
     padding: 0 20px;
   }
@@ -624,8 +621,36 @@ div.bSideItem {
 --------------------------------------*/
 .pagination {
   margin: 0;
+
+  li{
+
+    a{
+      margin-right: 5px;
+      border-radius: 50px;
+      padding: 6px 20px;
+    }
+
+    span{
+      margin-right: 5px;
+      border-radius: 50px;
+      padding: 6px 20px;
+    }
+  }
 }
 
+.pagination > li:last-child > a,
+.pagination > li:first-child > a{
+  border-radius: 50px;
+  margin-right: 5px;
+  padding: 6px 16px;
+}
+
+.pagination > li:last-child > span,
+.pagination > li:first-child > span{
+  border-radius: 50px;
+  margin-right: 5px;
+  padding: 6px 20px;
+}
 
 /* ------------------------------------
     // Messages
@@ -669,7 +694,31 @@ div.action_messages, div.log_container {
 
   &:hover{
     text-decoration: none;
-    color: #333;
+    color: #fff;
+    background: #32B9D2;
   }
 }
 
+
+/* ------------------------------------
+    Footer
+--------------------------------------*/
+
+.main_footer{
+  padding: 60px 0 10px;
+  font-size: 14px;
+
+  p{
+    text-transform: uppercase;
+
+    a{
+      text-decoration: none;
+      color: #454545;
+
+      &:hover{
+        color: #2A7FC7;
+        text-decoration: underline;
+      }
+    }
+  }
+}

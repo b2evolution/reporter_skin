@@ -88,21 +88,37 @@ body#reporter_skin, .pager li > span {
   background-position: center 25%;
   overflow: hidden;
 
-  .entry-title-full{
-    color: #fff;
-    font-weight: 900;
-    font-size: 60px;
-    text-transform: capitalize;
+  .single_bg_content{
     position: absolute;
-    top: 32%;
+    top: 35%;
     left: 0;
     right: 0;
-    text-align: center;
-    width: 100%;
     z-index: 1;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 30px;
+
+    .entry-title-full{
+      color: #fff;
+      font-weight: 900;
+      font-size: 60px;
+      text-transform: capitalize;
+      text-align: center;
+      width: 100%;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    p{
+      text-align: center;
+      font-size: 22px;
+      color: rgba(255, 255, 255, 0.94);
+      font-weight: 400;
+
+      a{
+        color: rgba(255, 255, 255, 0.94);
+        text-transform: capitalize;
+      }
+    }
   }
 
   .divider{
@@ -127,7 +143,7 @@ body#reporter_skin, .pager li > span {
       font-style: italic;
       line-height: 1.4;
       font-family: "Lato", sans-serif;
-      padding-bottom: 15px;
+      padding-bottom: 12px;
     }
   }
 

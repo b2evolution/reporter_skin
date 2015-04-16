@@ -20,7 +20,7 @@
       position: relative;
       margin-top: 5px;
       border-top: 1px solid #E0E0E0;
-      padding-top: 10px;
+      padding-top: 12px;
 
       &::before{
         content: '';
@@ -125,6 +125,29 @@
 
     ul{
       list-style-type: none;
+    }
+  }
+}
+
+
+/* ------------------------------------
+    Tag Cloud
+--------------------------------------*/
+
+.tag_cloud {
+
+  a{
+    padding: 10px 20px;
+    background: #eee;
+    border-radius: 5px;
+    color: #333;
+    font-size: 15px !important;
+    text-transform: capitalize;
+
+    &:hover{
+      text-decoration: none;
+      background: #32B9D2;
+      color: #fff;
     }
   }
 }
