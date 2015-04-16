@@ -83,7 +83,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 	<div class="row">
 		<div class="col-md-12">
-			<ul class="nav nav-tabs">
+			<ul class="nav nav-tabs main_nav">
 	<?php
 		// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
 		// Display container and contents:

@@ -47,7 +47,7 @@ body#reporter_skin, .pager li > span {
 
 
 /* ------------------------------------
-    Menu
+    Menu Navigation
 --------------------------------------*/
 .single_menu{
   background: #fff;
@@ -131,6 +131,7 @@ body#reporter_skin, .pager li > span {
     }
   }
 
+
 // Large screens
 @media only screen and (min-width: 1200px){
 
@@ -171,8 +172,6 @@ body#reporter_skin, .pager li > span {
 /* ------------------------------------
     Typograpy
 --------------------------------------*/
-
-
 .bPost_disp_single {
 
   h1, h2, h3, h4, h5, h6{
