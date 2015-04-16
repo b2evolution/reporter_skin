@@ -124,6 +124,11 @@ body#reporter_skin, .pager li > span {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 0; }
+  .single_bg.nocover {
+    height: auto; }
+    .single_bg.nocover .entry-title-full {
+      position: relative;
+      color: #000; }
 
 /* ------------------------------------
     Style Image Legend
