@@ -112,7 +112,7 @@ body#reporter_skin{
     border: 1px solid rgba(51, 51, 51, 0.2);
     font-weight: 700;
     letter-spacing: 0px;
-    font-size: 15px;
+    font-size: 13px;
     border-radius: 50px;
     @include transition(all 0.32s ease-in-out);
 
@@ -125,6 +125,14 @@ body#reporter_skin{
   }
 }
 
+// Social Icon
+.widget--social-media-links a{
+  background: rgba(238, 238, 238, 1);
+
+  &:hover {
+    background: #32B9D2;
+  }
+}
 
 
 /* ------------------------------------
@@ -631,12 +639,17 @@ div.bSideItem {
       margin-right: 5px;
       border-radius: 50px;
       padding: 6px 20px;
+      color: #333;
+      @include transition(all 0.32s ease);
     }
 
     span{
       margin-right: 5px;
       border-radius: 50px;
       padding: 6px 20px;
+      color: #fff;
+      background: #32B9D2;
+      border-color: #32B9D2;
     }
   }
 }
@@ -653,6 +666,15 @@ div.bSideItem {
   border-radius: 50px;
   margin-right: 5px;
   padding: 6px 20px;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover{
+  color: #fff;
+  background: #32B9D2;
+  border-color: #32B9D2;
 }
 
 /* ------------------------------------
@@ -687,18 +709,23 @@ div.action_messages, div.log_container {
    bMore
 --------------------------------------*/
 
-.bMore a{
-  background: #eee;
-  padding: 10px 20px;
-  border-radius: 50px;
-  color: #666;
-  font-size: 14px;
-  font-family: "Lato", sans-serif;
+.bMore{
+  margin: 25px 0 20px;
 
-  &:hover{
-    text-decoration: none;
-    color: #fff;
-    background: #32B9D2;
+  a{
+    font-size: 13px;
+    font-family: "Lato", sans-serif;
+    background: #eee;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: #666;
+    @include transition(all 0.32s ease-in-out);
+
+    &:hover{
+      text-decoration: none;
+      color: #fff;
+      background: #32B9D2;
+    }
   }
 }
 
@@ -725,3 +752,4 @@ div.action_messages, div.log_container {
     }
   }
 }
+

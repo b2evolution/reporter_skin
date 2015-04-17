@@ -15,24 +15,27 @@ body#reporter_skin, .pager li > span {
   font-weight: 900;
 }
 
-.content_full{
-  margin-bottom: 30px;
+.bPost_disp_single{
+
+  .content_full{
+    margin-bottom: 30px;
 
 
-  .image_block img{
-    // width: 100%;
-  }
+    .image_block img{
+      // width: 100%;
+    }
 
 
-  .bText{
-    letter-spacing: 0;
-    font-size: 18px;
-    font-family: "Merriweather", sans-serif;
-    color: #515151;
-    line-height: 1.8;
+    .bText{
+      letter-spacing: 0;
+      font-size: 18px;
+      font-family: "Merriweather", sans-serif;
+      color: #515151;
+      line-height: 1.8;
 
-    p{
-      margin-bottom: 22px;
+      p{
+        margin-bottom: 22px;
+      }
     }
   }
 }
@@ -55,6 +58,13 @@ body#reporter_skin, .pager li > span {
   .nav.single_nav{
     border-bottom: none;
     margin-bottom: 20px;
+
+    li{
+
+      a{
+        font-size: 13px;
+      }
+    }
   }
 
 }
@@ -84,12 +94,12 @@ body#reporter_skin, .pager li > span {
     .entry-title-full{
       color: #fff;
       font-weight: 900;
-      font-size: 60px;
+      font-size: 56px;
       text-transform: capitalize;
       text-align: center;
       width: 100%;
       z-index: 1;
-      max-width: 720px;
+      max-width: 750px;
       margin: 0 auto;
       padding: 0 30px;
     }
