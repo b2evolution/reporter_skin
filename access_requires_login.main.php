@@ -17,16 +17,12 @@
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
 
-global $app_version, $disp, $Blog, $skin_links, $francois_links;
+global $app_version, $disp, $Blog;
 
 if( version_compare( $app_version, '5.0' ) < 0 )
 { // Older skins (versions 2.x and above) should work on newer b2evo versions, but newer skins may not work on older b2evo versions.
 	die( 'This skin is designed for b2evolution 5.0 and above. Please <a href="http://b2evolution.net/downloads/index.html">upgrade your b2evolution</a>.' );
 }
-
-
-// Display in-skin login form
-$disp = 'login';
 
 // This is the main template; it may be used to display very different things.
 // Do inits depending on current $disp:

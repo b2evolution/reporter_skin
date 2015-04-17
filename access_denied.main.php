@@ -17,7 +17,7 @@
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
 
-global $app_version, $disp, $Blog, $skin_links, $francois_links;
+global $app_version, $disp, $Blog;
 
 if( version_compare( $app_version, '5.0' ) < 0 )
 { // Older skins (versions 2.x and above) should work on newer b2evo versions, but newer skins may not work on older b2evo versions.
@@ -109,13 +109,7 @@ siteskin_include( '_site_body_header.inc.php' );
 		// ----------------------------- END OF REQUEST TITLE ----------------------------
 	?>
 
-	<?php
-		// -------------- MAIN CONTENT TEMPLATE INCLUDED HERE (Based on $disp) --------------
-		skin_include( '$disp$' );
-		// Note: you can customize any of the sub templates included here by
-		// copying the matching php file into your skin directory.
-		// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
-	?>
+			<p class="center"><?php echo T_( 'You are not a member of this collection, therefore you are not allowed to access it.' ); ?></p>
 
 		</div>
 	</div>

@@ -62,7 +62,7 @@ body#reporter_skin{
 @import "single_main";
 @import "post_main";
 @import "widget_style";
-
+@import "page_style";
 
 /* ------------------------------------
     Header
@@ -96,13 +96,17 @@ body#reporter_skin{
 .nav.nav-tabs {
   margin-top: 10px;
   border-bottom: none;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 
   li.active > a{
     background-color: #32B9D2;
     border: none;
     border-radius: 50px;
     color: #fff;
+  }
+
+  & > li{
+    margin-bottom: 6px;
   }
 
   & > li > a{

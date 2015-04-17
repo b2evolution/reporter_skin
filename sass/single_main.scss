@@ -57,7 +57,7 @@ body#reporter_skin, .pager li > span {
 
   .nav.single_nav{
     border-bottom: none;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
 
     li{
 
@@ -127,6 +127,29 @@ body#reporter_skin, .pager li > span {
   }
 
 }
+
+.single_bg.nocover{
+  height: auto;
+
+  .single_bg_content{
+    position: relative;
+    margin-top: 30px;
+
+    .entry-title-full{
+      color: #333;
+    }
+
+    p{
+      color: #333;
+
+      a{
+        color: #333;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
 
 /* ------------------------------------
     Style Image Legend
@@ -260,6 +283,7 @@ body#reporter_skin, .pager li > span {
     border-radius: 5px;
     font-size: 13px;
     color: #333;
+    @include transition(all 0.32s ease);
 
     &:hover{
       background: #32B9D2;
@@ -367,7 +391,7 @@ h4.comment_text{
 
 @media only screen and (max-width: 40em) {
 
-  .single_bg{
+  .single_bg .single_bg_content{
 
     .entry-title-full{
       font-size: 2.3em;

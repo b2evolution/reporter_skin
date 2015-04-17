@@ -97,33 +97,23 @@ siteskin_include( '_site_body_header.inc.php' );
     </div><!-- End container PageTop -->
   </div> <!-- End Single Menu -->
 
-  <div class="single_bg_content">
-
-      <?php
-        // ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
-        request_title( array(
-            'title_before'      => '<h2 class="entry-title-full">',
-            'title_after'       => '<span></span></h2>',
-            'title_none'        => '',
-            'glue'              => ' - ',
-            'title_single_disp' => true,
-            'format'            => 'htmlbody',
-            'register_text'     => '',
-            'login_text'        => '',
-            'lostpassword_text' => '',
-            'account_activation' => '',
-            'msgform_text'      => '',
-          ) );
-        // ----------------------------- END OF REQUEST TITLE ----------------------------
-        ?>
-        <p> By
-          <?php
-              $Item->author( array(
-              'link_text' => $params['author_link_text']
-            ) );
-           ?>
-        </p>
-  </div>
+  <?php
+    // ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
+    request_title( array(
+        'title_before'      => '<h2 class="entry-title-full">',
+        'title_after'       => '</h2>',
+        'title_none'        => '',
+        'glue'              => ' - ',
+        'title_single_disp' => true,
+        'format'            => 'htmlbody',
+        'register_text'     => '',
+        'login_text'        => '',
+        'lostpassword_text' => '',
+        'account_activation' => '',
+        'msgform_text'      => '',
+      ) );
+    // ----------------------------- END OF REQUEST TITLE ----------------------------
+    ?>
 
     <div class="divider"></div>
   </div>
@@ -136,7 +126,9 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <!-- Container Main Area -->
 <div class="container">
+
   <div class="row">
+
     <div class="col-md-8 col-md-offset-2 ">
 
   <?php
@@ -147,6 +139,7 @@ siteskin_include( '_site_body_header.inc.php' );
       ) );
     // --------------------------------- END OF MESSAGES ---------------------------------
   ?>
+
 
   <?php
     // -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
@@ -173,7 +166,7 @@ siteskin_include( '_site_body_header.inc.php' );
       skin_include( '_item_block.inc.php', array(
           'content_mode' => 'auto',   // 'auto' will auto select depending on $disp-detail
           // Comment template
-          'comment_start'         => '<div class="panel panel-default single_comment">',
+          'comment_start'         => '<div class="panel panel-default page_comment">',
           'comment_end'           => '</div>',
           'comment_title_before'  => '<div class="panel-heading">',
           'comment_title_after'   => '',
@@ -230,7 +223,6 @@ siteskin_include( '_site_body_header.inc.php' );
 
   <div class="row">
     <div class="col-md-12 center">
-
     <div class="main_footer">
       <?php
         // Display container and contents:
@@ -239,7 +231,6 @@ siteskin_include( '_site_body_header.inc.php' );
           ) );
         // Note: Double quotes have been used around "Footer" only for test purposes.
       ?>
-
       <p>
         <?php
           // Display footer text (text can be edited in Blog Settings):
@@ -292,7 +283,7 @@ siteskin_include( '_site_body_header.inc.php' );
             'img_height'  => 32,
           ) );
       ?>
-  </div> <!-- End Main_footer -->
+      </div> <!-- End main_footer -->
 
     </div>
   </div>

@@ -12,3 +12,7 @@
 ### Single Post Page
 
 ![disp=single](skinshot_single.png)
+
+### Single Page
+
+![disp=single](skinshot_page.png)
