@@ -156,7 +156,7 @@ echo '<div id="styled_content_block">'; // Beginning of post display
 	<?php
 		// ------------------ FEEDBACK (COMMENTS/TRACKBACKS) INCLUDED HERE ------------------
 		skin_include( '_item_feedback.inc.php', array_merge( array(
-				'before_section_title' => '<div class="clearfix"></div><h4>',
+				'before_section_title' => '<div class="clearfix"></div><h4 class="comment_text">',
 				'after_section_title'  => '</h4>',
 				'author_link_text' => $params['author_link_text'],
 			), $params ) );

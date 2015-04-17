@@ -103,7 +103,7 @@ siteskin_include( '_site_body_header.inc.php' );
         <p> By
           <?php
               $Item->author( array(
-              'link_text' => $params['author_link_text'],
+              'link_text' => $params['author_link_text']
             ) );
            ?>
         </p>
@@ -179,7 +179,7 @@ siteskin_include( '_site_body_header.inc.php' );
       skin_include( '_item_block.inc.php', array(
           'content_mode' => 'auto',   // 'auto' will auto select depending on $disp-detail
           // Comment template
-          'comment_start'         => '<div class="panel panel-default">',
+          'comment_start'         => '<div class="panel panel-default single_comment">',
           'comment_end'           => '</div>',
           'comment_title_before'  => '<div class="panel-heading">',
           'comment_title_after'   => '',
@@ -295,7 +295,7 @@ siteskin_include( '_site_body_header.inc.php' );
         'search_submit_after'  => '</span></div>',
         // Comment template
         'comment_avatar_position' => 'before_text',
-        'comment_start'         => '<div class="panel panel-default">',
+        'comment_start'         => ' <div class="panel panel-default single_comment">',
         'comment_end'           => '</div>',
         'comment_post_before'   => '<div class="panel-heading"><h4 class="bTitle floatleft">',
         'comment_post_after'    => '</h4>',
