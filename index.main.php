@@ -461,8 +461,6 @@ siteskin_include( '_site_body_header.inc.php' );
 			) );
 	?>
 
-<!--- Test -->
-
 		</div>
 	</div>
 </div>
