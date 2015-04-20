@@ -1,5 +1,6 @@
-# Starter Skin for b2evolution CMS v6
+# Reporter Skin for b2evolution CMS v6
 
+Minimalis and Simple blog skin for B2evolution CMS
 
 ### Front Page
 
