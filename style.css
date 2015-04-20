@@ -798,8 +798,8 @@ form.bComment {
 /* ------------------------------------
     // Comment template
 --------------------------------------*/
-.comment_rating {
-  margin-top: 2px; }
+.evoComment-rating {
+  margin-top: -40px; }
 
 #comment_edit .comment_rating {
   margin-top: 9px; }
