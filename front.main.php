@@ -401,6 +401,7 @@ siteskin_include( '_site_body_header.inc.php' );
 <!-- =================================== START OF FOOTER =================================== -->
 	<div class="row">
 		<div class="col-md-12 center">
+<!--- Test -->
 	<?php
 		// Display container and contents:
 		skin_container( NT_("Footer"), array(
