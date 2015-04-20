@@ -166,16 +166,18 @@ siteskin_include( '_site_body_header.inc.php' );
       skin_include( '_item_block.inc.php', array(
           'content_mode' => 'auto',   // 'auto' will auto select depending on $disp-detail
           // Comment template
-          'comment_start'         => '<div class="panel panel-default page_comment">',
+          'comment_start'         => '<div class="evoComment panel panel-default">',
           'comment_end'           => '</div>',
-          'comment_title_before'  => '<div class="panel-heading">',
-          'comment_title_after'   => '',
-          'comment_rating_before' => '<div class="comment_rating floatright">',
+          'comment_title_before'  => '<div class="panel-heading"><h4 class="evoComment-title panel-title">',
+          'comment_title_after'   => '</h4></div><div class="panel-body">',
+          'comment_avatar_before' => '<div class="evoComment-avatar">',
+          'comment_avatar_after'  => '</div>',
+          'comment_rating_before' => '<div class="evoComment-rating">',
           'comment_rating_after'  => '</div>',
-          'comment_text_before'   => '</div><div class="panel-body">',
-          'comment_text_after'    => '',
-          'comment_info_before'   => '<div class="bCommentSmallPrint">',
-          'comment_info_after'    => '</div></div>',
+          'comment_text_before'   => '<div class="evoComment-text">',
+          'comment_text_after'    => '</div>',
+          'comment_info_before'   => '<div class="evoComment-info clear text-muted"><small>',
+          'comment_info_after'    => '</small></div></div>',
           'preview_start'         => '<div class="panel panel-warning" id="comment_preview">',
           'preview_end'           => '</div>',
           'comment_attach_info'   => get_icon( 'help', 'imgtag', array(
@@ -191,7 +193,6 @@ siteskin_include( '_site_body_header.inc.php' );
                                      .' comment_form"><div class="panel-heading"><h3>',
           'form_title_end'        => '</h3></div>',
           'after_comment_form'    => '</div>',
-          'include_cover_images'  => false,
         ) );
       // ----------------------------END ITEM BLOCK  ----------------------------
 
