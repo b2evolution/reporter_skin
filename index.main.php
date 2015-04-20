@@ -457,6 +457,8 @@ siteskin_include( '_site_body_header.inc.php' );
 			?>
 		</div> <!-- End Main_footer -->
 
+<!--- Test -->
+
 		</div>
 	</div>
 </div>
