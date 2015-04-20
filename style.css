@@ -1025,4 +1025,10 @@ div.action_messages, div.log_container {
         color: #2A7FC7;
         text-decoration: underline; }
 
+/* ------------------------------------
+    Disp Comment
+--------------------------------------*/
+.disp_comments .bCommentAvatar {
+  float: left; }
+
 /*# sourceMappingURL=style.css.map */
