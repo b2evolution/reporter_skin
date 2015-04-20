@@ -401,65 +401,68 @@ siteskin_include( '_site_body_header.inc.php' );
 <!-- =================================== START OF FOOTER =================================== -->
 	<div class="row">
 		<div class="col-md-12 center">
-	<?php
-		// Display container and contents:
-		skin_container( NT_("Footer"), array(
-				// The following params will be used as defaults for widgets included in this container:
-			) );
-		// Note: Double quotes have been used around "Footer" only for test purposes.
-	?>
-	<p>
-		<?php
-			// Display footer text (text can be edited in Blog Settings):
-			$Blog->footer_text( array(
-					'before'      => '',
-					'after'       => ' &bull; ',
-				) );
+			<div class="main_footer">
 
-		// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
-		?>
+			<?php
+				// Display container and contents:
+				skin_container( NT_("Footer"), array(
+						// The following params will be used as defaults for widgets included in this container:
+					) );
+				// Note: Double quotes have been used around "Footer" only for test purposes.
+			?>
+			<p>
+				<?php
+					// Display footer text (text can be edited in Blog Settings):
+					$Blog->footer_text( array(
+							'before'      => '',
+							'after'       => ' &bull; ',
+						) );
 
-		<?php
-			// Display a link to contact the owner of this blog (if owner accepts messages):
-			$Blog->contact_link( array(
-					'before'      => '',
-					'after'       => ' &bull; ',
-					'text'   => T_('Contact'),
-					'title'  => T_('Send a message to the owner of this blog...'),
-				) );
-			// Display a link to help page:
-			$Blog->help_link( array(
-					'before'      => ' ',
-					'after'       => ' ',
-					'text'        => T_('Help'),
-				) );
-		?>
+				// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
+				?>
 
-		<?php
-			// Display additional credits:
-			// If you can add your own credits without removing the defaults, you'll be very cool :))
-			// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
-			credits( array(
-					'list_start'  => '&bull;',
-					'list_end'    => ' ',
-					'separator'   => '&bull;',
-					'item_start'  => ' ',
-					'item_end'    => ' ',
-				) );
-		?>
-	</p>
+				<?php
+					// Display a link to contact the owner of this blog (if owner accepts messages):
+					$Blog->contact_link( array(
+							'before'      => '',
+							'after'       => ' &bull; ',
+							'text'   => T_('Contact'),
+							'title'  => T_('Send a message to the owner of this blog...'),
+						) );
+					// Display a link to help page:
+					$Blog->help_link( array(
+							'before'      => ' ',
+							'after'       => ' ',
+							'text'        => T_('Help'),
+						) );
+				?>
 
-	<?php
-		// Please help us promote b2evolution and leave this logo on your blog:
-		powered_by( array(
-				'block_start' => '<div class="powered_by">',
-				'block_end'   => '</div>',
-				// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
-				'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
-				'img_width'   => 120,
-				'img_height'  => 32,
-			) );
-	?>
+				<?php
+					// Display additional credits:
+					// If you can add your own credits without removing the defaults, you'll be very cool :))
+					// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
+					credits( array(
+							'list_start'  => '&bull;',
+							'list_end'    => ' ',
+							'separator'   => '&bull;',
+							'item_start'  => ' ',
+							'item_end'    => ' ',
+						) );
+				?>
+			</p>
+
+			<?php
+				// Please help us promote b2evolution and leave this logo on your blog:
+				powered_by( array(
+						'block_start' => '<div class="powered_by">',
+						'block_end'   => '</div>',
+						// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
+						'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
+						'img_width'   => 120,
+						'img_height'  => 32,
+					) );
+			?>
+			</div> <!-- End main_footer -->
 
 		</div>
 	</div>

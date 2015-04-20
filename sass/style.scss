@@ -83,16 +83,19 @@ body#reporter_skin{
 .pageHeader {
   margin-bottom: 20px;
 
-  .title_site{
-    margin-bottom: 0;
+  .widget_core_coll_title{
 
-    a{
-      color: #333333;
-      text-transform: uppercase;
-      font-weight: 900;
+    h1{
+      margin-bottom: 0;
 
-      &:hover{
-        text-decoration: none;
+      a{
+        color: #333333;
+        text-transform: uppercase;
+        font-weight: 900;
+
+        &:hover{
+          text-decoration: none;
+        }
       }
     }
   }

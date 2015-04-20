@@ -223,7 +223,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
   <div class="row">
     <div class="col-md-12 center">
-    <div class="main_footer">
+      <div class="main_footer">
       <?php
         // Display container and contents:
         skin_container( NT_("Footer"), array(
