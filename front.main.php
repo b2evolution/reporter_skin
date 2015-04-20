@@ -32,7 +32,6 @@ skin_include( '_html_header.inc.php', array(
 	             .'<html lang="'.locale_lang( false ).'">',
 ) );
 // Note: You can customize the default HTML header by copying the generic
-siteskin_include( '_html_header.inc.php' );
 // /skins/_html_header.inc.php file into the current skin folder.
 // -------------------------------- END OF HEADER --------------------------------
 
@@ -42,7 +41,6 @@ siteskin_include( '_html_header.inc.php' );
 siteskin_include( '_site_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
 ?>
-
 
 <div class="container">
 	<div class="row">
@@ -74,7 +72,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				// The following params will be used as defaults for widgets included in this container:
 				'block_start'       => '<div class="widget $wi_class$">',
 				'block_end'         => '</div>',
-				'block_title_start' => '<h1 class="title_site">',
+				'block_title_start' => '<h1>',
 				'block_title_end'   => '</h1>',
 			) );
 		// ----------------------------- END OF "Header" CONTAINER -----------------------------
@@ -116,7 +114,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
 
 	<?php
-	if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo' ) ) )
+	if( ! in_array( $disp, array( 'login', 'lostpassword', 'register', 'activateinfo', 'access_requires_login' ) ) )
 	{ // Don't display the messages here because they are displayed inside wrapper to have the same width as form
 		// ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
 		messages( array(
@@ -202,16 +200,18 @@ siteskin_include( '_site_body_header.inc.php' );
 			skin_include( '_item_block.inc.php', array(
 					'content_mode' => 'auto',		// 'auto' will auto select depending on $disp-detail
 					// Comment template
-					'comment_start'         => '<div class="panel panel-default">',
+					'comment_start'         => '<div class="evoComment panel panel-default">',
 					'comment_end'           => '</div>',
-					'comment_title_before'  => '<div class="panel-heading">',
-					'comment_title_after'   => '',
-					'comment_rating_before' => '<div class="comment_rating floatright">',
+					'comment_title_before'  => '<div class="panel-heading"><h4 class="evoComment-title panel-title">',
+					'comment_title_after'   => '</h4></div><div class="panel-body">',
+					'comment_avatar_before' => '<div class="evoComment-avatar">',
+					'comment_avatar_after'  => '</div>',
+					'comment_rating_before' => '<div class="evoComment-rating">',
 					'comment_rating_after'  => '</div>',
-					'comment_text_before'   => '</div><div class="panel-body">',
-					'comment_text_after'    => '',
-					'comment_info_before'   => '<div class="bCommentSmallPrint">',
-					'comment_info_after'    => '</div></div>',
+					'comment_text_before'   => '<div class="evoComment-text">',
+					'comment_text_after'    => '</div>',
+					'comment_info_before'   => '<div class="evoComment-info clear text-muted"><small>',
+					'comment_info_after'    => '</small></div></div>',
 					'preview_start'         => '<div class="panel panel-warning" id="comment_preview">',
 					'preview_end'           => '</div>',
 					'comment_attach_info'   => get_icon( 'help', 'imgtag', array(
@@ -317,21 +317,28 @@ siteskin_include( '_site_body_header.inc.php' );
 				'search_submit_before' => '<span class="input-group-btn">',
 				'search_submit_after'  => '</span></div>',
 				// Comment template
-				'comment_avatar_position' => 'before_text',
-				'comment_start'         => '<div class="panel panel-default">',
+				'comment_start'         => '<div class="evoComment panel panel-default">',
 				'comment_end'           => '</div>',
-				'comment_post_before'   => '<div class="panel-heading"><h4 class="bTitle floatleft">',
+				'comment_post_before'   => '<div class="panel-heading"><h4 class="panel-title pull-left">',
 				'comment_post_after'    => '</h4>',
-				'comment_title_before'  => '<div class="floatright">',
-				'comment_title_after'   => '</div><div class="clear"></div></div><div class="panel-body">',
-				'comment_rating_before' => '<div class="comment_rating floatright">',
+				'comment_title_before'  => '<h4 class="panel-title pull-right">',
+				'comment_title_after'   => '</h4><div class="clearfix"></div></div><div class="panel-body">',
+				'comment_avatar_before' => '<div class="evoComment-avatar">',
+				'comment_avatar_after'  => '</div>',
+				'comment_rating_before' => '<div class="evoComment-rating">',
 				'comment_rating_after'  => '</div>',
-				'comment_text_before'   => '',
-				'comment_text_after'    => '',
-				'comment_info_before'   => '<div class="bCommentSmallPrint">',
-				'comment_info_after'    => '</div></div>',
-				'preview_start'         => '<div class="panel panel-warning" id="comment_preview">',
-				'preview_end'           => '</div>',
+				'comment_text_before'   => '<div class="evoComment-text">',
+				'comment_text_after'    => '</div>',
+				'comment_info_before'   => '<div class="evoComment-info clear text-muted"><small>',
+				'comment_info_after'    => '</small></div></div>',
+				'comment_attach_info'   => get_icon( 'help', 'imgtag', array(
+						'data-toggle'    => 'tooltip',
+						'data-placement' => 'bottom',
+						'data-html'      => 'true',
+						'title'          => htmlspecialchars( get_upload_restriction( array(
+								'block_after'     => '',
+								'block_separator' => '<br /><br />' ) ) )
+					) ),
 				// Front page
 				'featured_intro_before' => '<div class="jumbotron">',
 				'featured_intro_after'  => '</div>',
@@ -342,15 +349,15 @@ siteskin_include( '_site_body_header.inc.php' );
 		// copying the matching php file into your skin directory.
 		// ------------------------- END OF MAIN CONTENT TEMPLATE ---------------------------
 	?>
+	</div>
 
-		</div>
+
+<!-- =================================== START OF SIDEBAR =================================== -->
 	<?php
 	if( $Skin->get_setting( 'layout' ) != 'single_column' )
 	{
 	?>
-<!-- =================================== START OF SIDEBAR =================================== -->
 		<div class="col-md-3"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
-
 	<?php
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
 		// Display container contents:
@@ -390,71 +397,71 @@ siteskin_include( '_site_body_header.inc.php' );
 	<?php } ?>
 	</div>
 
+
 <!-- =================================== START OF FOOTER =================================== -->
 	<div class="row">
 		<div class="col-md-12 center">
-
-		<div class="main_footer">
-			<?php
-				// Display container and contents:
-				skin_container( NT_("Footer"), array(
-						// The following params will be used as defaults for widgets included in this container:
-					) );
-				// Note: Double quotes have been used around "Footer" only for test purposes.
-			?>
-			<p>
+			<div class="main_footer">
 				<?php
-					// Display footer text (text can be edited in Blog Settings):
-					$Blog->footer_text( array(
-							'before'      => '',
-							'after'       => ' &bull; ',
+					// Display container and contents:
+					skin_container( NT_("Footer"), array(
+							// The following params will be used as defaults for widgets included in this container:
 						) );
-
-				// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
+					// Note: Double quotes have been used around "Footer" only for test purposes.
 				?>
+				<p>
+					<?php
+						// Display footer text (text can be edited in Blog Settings):
+						$Blog->footer_text( array(
+								'before'      => '',
+								'after'       => ' &bull; ',
+							) );
+
+					// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
+					?>
+
+					<?php
+						// Display a link to contact the owner of this blog (if owner accepts messages):
+						$Blog->contact_link( array(
+								'before'      => '',
+								'after'       => ' &bull; ',
+								'text'   => T_('Contact'),
+								'title'  => T_('Send a message to the owner of this blog...'),
+							) );
+						// Display a link to help page:
+						$Blog->help_link( array(
+								'before'      => ' ',
+								'after'       => ' ',
+								'text'        => T_('Help'),
+							) );
+					?>
+
+					<?php
+						// Display additional credits:
+						// If you can add your own credits without removing the defaults, you'll be very cool :))
+						// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
+						credits( array(
+								'list_start'  => '&bull;',
+								'list_end'    => ' ',
+								'separator'   => '&bull;',
+								'item_start'  => ' ',
+								'item_end'    => ' ',
+							) );
+					?>
+				</p>
 
 				<?php
-					// Display a link to contact the owner of this blog (if owner accepts messages):
-					$Blog->contact_link( array(
-							'before'      => '',
-							'after'       => ' &bull; ',
-							'text'   => T_('Contact'),
-							'title'  => T_('Send a message to the owner of this blog...'),
-						) );
-					// Display a link to help page:
-					$Blog->help_link( array(
-							'before'      => ' ',
-							'after'       => ' ',
-							'text'        => T_('Help'),
+					// Please help us promote b2evolution and leave this logo on your blog:
+					powered_by( array(
+							'block_start' => '<div class="powered_by">',
+							'block_end'   => '</div>',
+							// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
+							'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
+							'img_width'   => 120,
+							'img_height'  => 32,
 						) );
 				?>
-
-				<?php
-					// Display additional credits:
-					// If you can add your own credits without removing the defaults, you'll be very cool :))
-					// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
-					credits( array(
-							'list_start'  => '&bull;',
-							'list_end'    => ' ',
-							'separator'   => '&bull;',
-							'item_start'  => ' ',
-							'item_end'    => ' ',
-						) );
-				?>
-			</p>
-
-			<?php
-				// Please help us promote b2evolution and leave this logo on your blog:
-				powered_by( array(
-						'block_start' => '<div class="powered_by">',
-						'block_end'   => '</div>',
-						// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
-						'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
-						'img_width'   => 120,
-						'img_height'  => 32,
-					) );
-			?>
-		</div> <!-- end main_footer -->
+				</div>
 
 		</div>
 	</div>

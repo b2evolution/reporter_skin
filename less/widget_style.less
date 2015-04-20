@@ -1,7 +1,3 @@
-///////////////////////////////////////////////////
-////////////////// WIDGET STYLE ///////////////////
-///////////////////////////////////////////////////
-
 .panel.widget{
   border: none;
   box-shadow: none;
@@ -53,7 +49,7 @@
 
       a{
         color: #333;
-        @include transition(all 0.32s ease);
+        .transition(all 0.32s ease-in-out);
 
         &:hover{
 
@@ -194,7 +190,7 @@
     color: #333;
     font-size: 15px !important;
     text-transform: capitalize;
-    @include transition(all 0.32s ease-in-out);
+    .transition(all 0.32s ease-in-out);
 
     &:hover{
       text-decoration: none;

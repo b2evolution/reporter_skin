@@ -4,9 +4,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,700);
 /* ------------------------------------
-    Include Bourbon Mixin
---------------------------------------*/
-/* ------------------------------------
     Common Style
 --------------------------------------*/
 html {
@@ -47,10 +44,7 @@ body#reporter_skin {
   -webkit-font-smoothing: antialiased; }
 
 /* ------------------------------------
-    Include File
---------------------------------------*/
-/* ------------------------------------
-    Style Content
+    Single Main Style
 --------------------------------------*/
 body#reporter_skin .pager li > a
 body#reporter_skin, .pager li > span {
