@@ -198,6 +198,7 @@ siteskin_include( '_site_body_header.inc.php' );
 					                           .' comment_form"><div class="panel-heading"><h3>',
 					'form_title_end'        => '</h3></div>',
 					'after_comment_form'    => '</div>',
+					'include_cover_images'  => false,
 				) );
 			// ----------------------------END ITEM BLOCK  ----------------------------
 
