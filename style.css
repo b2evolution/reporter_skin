@@ -979,13 +979,13 @@ div.action_messages, div.log_container {
 /* ------------------------------------
     // Positions on the action buttons near page titles
 --------------------------------------*/
-.post_title {
+.evo_post_title {
   display: table; }
-  .post_title h2 {
+  .evo_post_title h2 {
     display: table-cell;
     margin: 0;
     padding: 20px 0 10px; }
-  .post_title .btn-group {
+  .evo_post_title .btn-group {
     display: table-cell;
     padding: 20px 0 10px 30px;
     vertical-align: middle; }
