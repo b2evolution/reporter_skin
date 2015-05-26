@@ -2,6 +2,7 @@
 
 Minimalis and Simple blog skin for B2evolution CMS
 
+
 ### Front Page
 
 ![disp=front](skinshot_front.png)
