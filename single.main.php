@@ -119,7 +119,7 @@ siteskin_include( '_site_body_header.inc.php' );
         <p> By
           <?php
               $Item->author( array(
-              'link_text' => $params['author_link_text']
+              // 'link_text' => $params['author_link_text']
             ) );
            ?>
         </p>
