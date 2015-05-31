@@ -1,20 +1,34 @@
-/////////////////////////////////////////
-///////////      Mixins     /////////////
-/////////////////////////////////////////
-@import "bourbon/bourbon";
+/*============================================================
+=                    Skin Info              							   =
+=============================================================*
+  Name: Flat Skin Blog for b2evolution CMS v6
+  Description: Responsive Flat Design Blog Skin
+  Version: 1.0
+  Author: Ariflaw
+  This Template build by Ariflaw (https://github.com/Ariflaw)
+
+/*----------------  End of Themes Info  --------------------*/
 
 
-/* ------------------------------------
-    Include Google Font
---------------------------------------*/
-// @import url(http://fonts.googleapis.com/css?family=Lora:400,700,700italic);
+/**
+ * IMPORT MIXINS
+ * -----------------------------------------------------------------------------
+ */
+@import "less/mixins";
+
+
+/**
+ * Goole Font
+ * -----------------------------------------------------------------------------
+ */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,700);
 
 
-/* ------------------------------------
-    Common Style
---------------------------------------*/
+/**
+ * BASE STYLE
+ * -----------------------------------------------------------------------------
+ */
 html{
   overflow-y: scroll;
   -moz-overflow-style: scrollbar;
@@ -25,6 +39,14 @@ html, body{
   -webkit-font-smoothing: antialiased;
 }
 
+body{
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
 a, b, div, ul, li{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
@@ -32,7 +54,7 @@ a, b, div, ul, li{
 }
 
 a:hover{
-  @include transition(all 0.32s ease-in-out);
+  .transition(all 0.32s ease-in-out);
 }
 
 a:focus,
@@ -46,40 +68,32 @@ img:not([draggable]), embed, object, video {
     height: auto;
 }
 
-/* ------------------------------------
-    Typograpy
---------------------------------------*/
-body#reporter_skin{
-  font-family: "Lato", sans-serif;
-  font-size: 16px;
-  color: #333333;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
 
 /* ------------------------------------
     Single Main Style
 --------------------------------------*/
-@import "single_main";
+@import "less/single_main";
 
 /* ------------------------------------
     Style Posts
 --------------------------------------*/
-@import "post_main";
+@import "less/post_main";
 
 /* ------------------------------------
     Widget Style
 --------------------------------------*/
-@import "widget_style";
+@import "less/widget_style";
 
 /* ------------------------------------
     Page Style
 --------------------------------------*/
-@import "page_style";
+@import "less/page_style";
 
-/* ------------------------------------
-    Header
---------------------------------------*/
+
+/**
+ * HEADER STYLE
+ * -----------------------------------------------------------------------------
+ */
 .pageHeader {
   margin-bottom: 20px;
 
@@ -134,7 +148,7 @@ body#reporter_skin{
     letter-spacing: 0px;
     font-size: 13px;
     border-radius: 50px;
-    @include transition(all 0.32s ease-in-out);
+    .transition(all 0.32s ease-in-out);
 
     &:hover{
       color: #fff;
@@ -660,7 +674,7 @@ div.bSideItem {
       border-radius: 50px;
       padding: 6px 20px;
       color: #333;
-      @include transition(all 0.32s ease);
+      .transition(all 0.32s ease);
     }
 
     span{
@@ -728,8 +742,7 @@ div.action_messages, div.log_container {
 /* ------------------------------------
    bMore
 --------------------------------------*/
-
-.bMore{
+.bMore, .evo_post_more_link{
   margin: 25px 0 20px;
 
   a{
@@ -739,7 +752,7 @@ div.action_messages, div.log_container {
     padding: 10px 20px;
     border-radius: 50px;
     color: #666;
-    @include transition(all 0.32s ease-in-out);
+    .transition(all 0.32s ease-in-out);
 
     &:hover{
       text-decoration: none;
@@ -778,6 +791,10 @@ div.action_messages, div.log_container {
     Disp Comment
 --------------------------------------*/
 
-.evoComment-avatar{
-  float: left;
+.disp_comments{
+
+  .bCommentAvatar{
+    float: left;
+  }
+
 }

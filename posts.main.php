@@ -41,67 +41,67 @@ siteskin_include( '_site_body_header.inc.php' );
 	<div class="row">
 		<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8">
 			<div class="PageTop">
-	<?php
-		// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
-		// Display container and contents:
-		skin_container( NT_('Page Top'), array(
-				// The following params will be used as defaults for widgets included in this container:
-				'block_start'         => '<div class="widget $wi_class$">',
-				'block_end'           => '</div>',
-				'block_display_title' => false,
-				'list_start'          => '<ul>',
-				'list_end'            => '</ul>',
-				'item_start'          => '<li>',
-				'item_end'            => '</li>',
-			) );
-		// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
-	?>
+			<?php
+				// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
+				// Display container and contents:
+				skin_container( NT_('Page Top'), array(
+						// The following params will be used as defaults for widgets included in this container:
+						'block_start'         => '<div class="widget $wi_class$">',
+						'block_end'           => '</div>',
+						'block_display_title' => false,
+						'list_start'          => '<ul>',
+						'list_end'            => '</ul>',
+						'item_start'          => '<li>',
+						'item_end'            => '</li>',
+					) );
+				// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
+			?>
 			</div>
 		</div>
 		<div class="coll-xs-12 col-sm-12 col-md-8 col-md-pull-4">
 			<div class="pageHeader">
-	<?php
-		// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
-		// Display container and contents:
-		skin_container( NT_('Header'), array(
-				// The following params will be used as defaults for widgets included in this container:
-				'block_start'       => '<div class="widget $wi_class$">',
-				'block_end'         => '</div>',
-				'block_title_start' => '<h1 class="title_site">',
-				'block_title_end'   => '</h1>',
-			) );
-		// ----------------------------- END OF "Header" CONTAINER -----------------------------
-	?>
+			<?php
+				// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
+				// Display container and contents:
+				skin_container( NT_('Header'), array(
+						// The following params will be used as defaults for widgets included in this container:
+						'block_start'       => '<div class="widget $wi_class$">',
+						'block_end'         => '</div>',
+						'block_title_start' => '<h1 class="title_site">',
+						'block_title_end'   => '</h1>',
+					) );
+				// ----------------------------- END OF "Header" CONTAINER -----------------------------
+			?>
 			</div>
 		</div>
 	</div>
 
-	<div class="row">
+	<nav class="row">
 		<div class="col-md-12">
 			<ul class="nav nav-tabs main_nav">
-	<?php
-		// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-		// Display container and contents:
-		// Note: this container is designed to be a single <ul> list
-		skin_container( NT_('Menu'), array(
-				// The following params will be used as defaults for widgets included in this container:
-				'block_start'         => '',
-				'block_end'           => '',
-				'block_display_title' => false,
-				'list_start'          => '',
-				'list_end'            => '',
-				'item_start'          => '<li>',
-				'item_end'            => '</li>',
-				'item_selected_start' => '<li class="active">',
-				'item_selected_end'   => '</li>',
-				'item_title_before'   => '',
-				'item_title_after'    => '',
-			) );
-		// ----------------------------- END OF "Menu" CONTAINER -----------------------------
-	?>
+				<?php
+					// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+					// Display container and contents:
+					// Note: this container is designed to be a single <ul> list
+					skin_container( NT_('Menu'), array(
+							// The following params will be used as defaults for widgets included in this container:
+							'block_start'         => '',
+							'block_end'           => '',
+							'block_display_title' => false,
+							'list_start'          => '',
+							'list_end'            => '',
+							'item_start'          => '<li>',
+							'item_end'            => '</li>',
+							'item_selected_start' => '<li class="active">',
+							'item_selected_end'   => '</li>',
+							'item_title_before'   => '',
+							'item_title_after'    => '',
+						) );
+					// ----------------------------- END OF "Menu" CONTAINER -----------------------------
+				?>
 			</ul>
 		</div>
-	</div>
+	</nav>
 
 <!-- =================================== START OF MAIN AREA =================================== -->
 	<div class="row">
@@ -358,74 +358,73 @@ siteskin_include( '_site_body_header.inc.php' );
 	</div>
 
 <!-- =================================== START OF FOOTER =================================== -->
-	<div class="row">
+	<footer class="row">
 		<div class="col-md-12 center">
+			<div class="main_footer">
+				<?php
+					// Display container and contents:
+					skin_container( NT_("Footer"), array(
+							// The following params will be used as defaults for widgets included in this container:
+						) );
+					// Note: Double quotes have been used around "Footer" only for test purposes.
+				?>
 
-	<div class="main_footer">
-		<?php
-			// Display container and contents:
-			skin_container( NT_("Footer"), array(
-					// The following params will be used as defaults for widgets included in this container:
-				) );
-			// Note: Double quotes have been used around "Footer" only for test purposes.
-		?>
+				<p>
+					<?php
+						// Display footer text (text can be edited in Blog Settings):
+						$Blog->footer_text( array(
+								'before'      => '',
+								'after'       => ' &bull; ',
+							) );
 
-		<p>
-			<?php
-				// Display footer text (text can be edited in Blog Settings):
-				$Blog->footer_text( array(
-						'before'      => '',
-						'after'       => ' &bull; ',
-					) );
+					// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
+					?>
 
-			// TODO: dh> provide a default class for pTyp, too. Should be a name and not the ityp_ID though..?!
-			?>
+					<?php
+						// Display a link to contact the owner of this blog (if owner accepts messages):
+						$Blog->contact_link( array(
+								'before'      => '',
+								'after'       => ' &bull; ',
+								'text'   => T_('Contact'),
+								'title'  => T_('Send a message to the owner of this blog...'),
+							) );
+						// Display a link to help page:
+						$Blog->help_link( array(
+								'before'      => ' ',
+								'after'       => ' ',
+								'text'        => T_('Help'),
+							) );
+					?>
 
-			<?php
-				// Display a link to contact the owner of this blog (if owner accepts messages):
-				$Blog->contact_link( array(
-						'before'      => '',
-						'after'       => ' &bull; ',
-						'text'   => T_('Contact'),
-						'title'  => T_('Send a message to the owner of this blog...'),
-					) );
-				// Display a link to help page:
-				$Blog->help_link( array(
-						'before'      => ' ',
-						'after'       => ' ',
-						'text'        => T_('Help'),
-					) );
-			?>
+					<?php
+						// Display additional credits:
+						// If you can add your own credits without removing the defaults, you'll be very cool :))
+						// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
+						credits( array(
+								'list_start'  => '&bull;',
+								'list_end'    => ' ',
+								'separator'   => '&bull;',
+								'item_start'  => ' ',
+								'item_end'    => ' ',
+							) );
+					?>
+				</p>
 
-			<?php
-				// Display additional credits:
-				// If you can add your own credits without removing the defaults, you'll be very cool :))
-				// Please leave this at the bottom of the page to make sure your blog gets listed on b2evolution.net
-				credits( array(
-						'list_start'  => '&bull;',
-						'list_end'    => ' ',
-						'separator'   => '&bull;',
-						'item_start'  => ' ',
-						'item_end'    => ' ',
-					) );
-			?>
-		</p>
-
-			<?php
-				// Please help us promote b2evolution and leave this logo on your blog:
-				powered_by( array(
-						'block_start' => '<div class="powered_by">',
-						'block_end'   => '</div>',
-						// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
-						'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
-						'img_width'   => 120,
-						'img_height'  => 32,
-					) );
-			?>
-	</div> <!-- End main_Footer -->
+					<?php
+						// Please help us promote b2evolution and leave this logo on your blog:
+						powered_by( array(
+								'block_start' => '<div class="powered_by">',
+								'block_end'   => '</div>',
+								// Check /rsc/img/ for other possible images -- Don't forget to change or remove width & height too
+								'img_url'     => '$rsc$img/powered-by-b2evolution-120t.gif',
+								'img_width'   => 120,
+								'img_height'  => 32,
+							) );
+					?>
+			</div> <!-- End main_Footer -->
 
 		</div> <!-- End col-md-12 -->
-	</div> <!-- End Row -->
+	</footer> <!-- End footer -->
 </div>
 
 <?php

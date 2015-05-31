@@ -62,7 +62,7 @@ siteskin_include( '_site_body_header.inc.php' );
   <!-- container Page Top -->
   <div class="single_menu">
     <div class="container">
-      <div class="row">
+      <nav class="row">
         <div class="col-md-12">
           <ul class="nav nav-tabs single_nav">
             <?php
@@ -87,7 +87,7 @@ siteskin_include( '_site_body_header.inc.php' );
             ?>
           </ul>
         </div> <!-- end col-md-12 -->
-      </div> <!-- end row -->
+      </nav> <!-- end nav -->
     </div><!-- End container PageTop -->
   </div> <!-- End Single Menu -->
 
@@ -120,94 +120,92 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <!-- Container Main Area -->
 <div class="container">
-
   <div class="row">
-
     <div class="col-md-8 col-md-offset-2 ">
 
-  <?php
-    // ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
-    messages( array(
-        'block_start' => '<div class="action_messages">',
-        'block_end'   => '</div>',
-      ) );
-    // --------------------------------- END OF MESSAGES ---------------------------------
-  ?>
-
-
-  <?php
-    // -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-    mainlist_page_links( array(
-        'block_start' => '<div class="center"><ul class="pagination">',
-        'block_end' => '</ul></div>',
-        'page_current_template' => '<span><b>$page_num$</b></span>',
-        'page_item_before' => '<li>',
-        'page_item_after' => '</li>',
-      ) );
-    // ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
-  ?>
-
-
-  <?php
-    // --------------------------------- START OF POSTS -------------------------------------
-    // Display message if no post:
-    display_if_empty();
-
-    if( $Item )
-    { // For each blog post, do everything below up to the closing curly brace "}"
-
-      // ---------------------- ITEM BLOCK INCLUDED HERE ------------------------
-      skin_include( '_item_block.inc.php', array(
-          'content_mode' => 'auto',   // 'auto' will auto select depending on $disp-detail
-          // Comment template
-          'comment_start'         => '<div class="evoComment panel panel-default page_comment">',
-          'comment_end'           => '</div>',
-          'comment_title_before'  => '<div class="panel-heading"><h4 class="evoComment-title panel-title">',
-          'comment_title_after'   => '</h4></div><div class="panel-body">',
-          'comment_rating_before' => '<div class="evoComment-rating floatright">',
-          'comment_rating_after'  => '</div>',
-          'comment_avatar_after'  => '</div>',
-          'comment_avatar_before' => '<div class="evoComment-avatar">',
-          'comment_text_before'   => '<div class="evoComment-text">',
-          'comment_text_after'    => '</div>',
-          'comment_info_before'   => '<div class="evoComment-info clear text-muted"><small>',
-          'comment_info_after'    => '</small></div></div>',
-          'preview_start'         => '<div class="panel panel-warning" id="comment_preview">',
-          'preview_end'           => '</div>',
-          'comment_attach_info'   => get_icon( 'help', 'imgtag', array(
-              'data-toggle'    => 'tooltip',
-              'data-placement' => 'bottom',
-              'data-html'      => 'true',
-              'title'          => htmlspecialchars( get_upload_restriction( array(
-                  'block_after'     => '',
-                  'block_separator' => '<br /><br />' ) ) )
-            ) ),
-          // Comment form
-          'form_title_start'      => '<div class="panel '.( $Session->get('core.preview_Comment') ? 'panel-danger' : 'panel-default' )
-                                     .' comment_form"><div class="panel-heading"><h3>',
-          'form_title_end'        => '</h3></div>',
-          'after_comment_form'    => '</div>',
-          'include_cover_images'  => false,
+    <?php
+      // ------------------------- MESSAGES GENERATED FROM ACTIONS -------------------------
+      messages( array(
+          'block_start' => '<div class="action_messages">',
+          'block_end'   => '</div>',
         ) );
-      // ----------------------------END ITEM BLOCK  ----------------------------
+      // --------------------------------- END OF MESSAGES ---------------------------------
+    ?>
 
 
-    } // ---------------------------------- END OF POSTS ------------------------------------
-  ?>
+    <?php
+      // -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
+      mainlist_page_links( array(
+          'block_start' => '<div class="center"><ul class="pagination">',
+          'block_end' => '</ul></div>',
+          'page_current_template' => '<span><b>$page_num$</b></span>',
+          'page_item_before' => '<li>',
+          'page_item_after' => '</li>',
+        ) );
+      // ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
+    ?>
 
-  <?php
-    // -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
-    mainlist_page_links( array(
-        'block_start' => '<div class="center"><ul class="pagination">',
-        'block_end' => '</ul></div>',
-        'page_current_template' => '<span><b>$page_num$</b></span>',
-        'page_item_before' => '<li>',
-        'page_item_after' => '</li>',
-        'prev_text' => '&lt;&lt;',
-        'next_text' => '&gt;&gt;',
-      ) );
-    // ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
-  ?>
+
+    <?php
+      // --------------------------------- START OF POSTS -------------------------------------
+      // Display message if no post:
+      display_if_empty();
+
+      if( $Item )
+      { // For each blog post, do everything below up to the closing curly brace "}"
+
+        // ---------------------- ITEM BLOCK INCLUDED HERE ------------------------
+        skin_include( '_item_block.inc.php', array(
+            'content_mode' => 'auto',   // 'auto' will auto select depending on $disp-detail
+            // Comment template
+            'comment_start'         => '<div class="evoComment panel panel-default page_comment">',
+            'comment_end'           => '</div>',
+            'comment_title_before'  => '<div class="panel-heading"><h4 class="evoComment-title panel-title">',
+            'comment_title_after'   => '</h4></div><div class="panel-body">',
+            'comment_rating_before' => '<div class="evoComment-rating floatright">',
+            'comment_rating_after'  => '</div>',
+            'comment_avatar_after'  => '</div>',
+            'comment_avatar_before' => '<div class="evoComment-avatar">',
+            'comment_text_before'   => '<div class="evoComment-text">',
+            'comment_text_after'    => '</div>',
+            'comment_info_before'   => '<div class="evoComment-info clear text-muted"><small>',
+            'comment_info_after'    => '</small></div></div>',
+            'preview_start'         => '<div class="panel panel-warning" id="comment_preview">',
+            'preview_end'           => '</div>',
+            'comment_attach_info'   => get_icon( 'help', 'imgtag', array(
+                'data-toggle'    => 'tooltip',
+                'data-placement' => 'bottom',
+                'data-html'      => 'true',
+                'title'          => htmlspecialchars( get_upload_restriction( array(
+                    'block_after'     => '',
+                    'block_separator' => '<br /><br />' ) ) )
+              ) ),
+            // Comment form
+            'form_title_start'      => '<div class="panel '.( $Session->get('core.preview_Comment') ? 'panel-danger' : 'panel-default' )
+                                       .' comment_form"><div class="panel-heading"><h3>',
+            'form_title_end'        => '</h3></div>',
+            'after_comment_form'    => '</div>',
+            'include_cover_images'  => false,
+          ) );
+        // ----------------------------END ITEM BLOCK  ----------------------------
+
+
+      } // ---------------------------------- END OF POSTS ------------------------------------
+    ?>
+
+    <?php
+      // -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
+      mainlist_page_links( array(
+          'block_start' => '<div class="center"><ul class="pagination">',
+          'block_end' => '</ul></div>',
+          'page_current_template' => '<span><b>$page_num$</b></span>',
+          'page_item_before' => '<li>',
+          'page_item_after' => '</li>',
+          'prev_text' => '&lt;&lt;',
+          'next_text' => '&gt;&gt;',
+        ) );
+      // ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
+    ?>
 
     </div>
 
@@ -218,7 +216,7 @@ siteskin_include( '_site_body_header.inc.php' );
 <!-- Container Footer -->
 <div class="container">
 
-  <div class="row">
+  <footer class="row">
     <div class="col-md-12 center">
     <div class="main_footer">
       <?php
@@ -283,7 +281,7 @@ siteskin_include( '_site_body_header.inc.php' );
       </div> <!-- End main_footer -->
 
     </div>
-  </div>
+  </footer>
 </div>
 
 <?php
