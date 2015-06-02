@@ -1,32 +1,6 @@
 /////////////////////////////////////////
 //////// Page Style
 ////////////////////////////////////////
-
-.bPost_disp_page{
-
-  .content_full{
-    margin-bottom: 30px;
-
-
-    .image_block img{
-      // width: 100%;
-    }
-
-
-    .bText{
-      letter-spacing: 0;
-      font-size: 18px;
-      font-family: "Merriweather", sans-serif;
-      color: #515151;
-      line-height: 1.8;
-
-      p{
-        margin-bottom: 22px;
-      }
-    }
-  }
-}
-
 .disp_page{
 
   .single_bg{
@@ -60,6 +34,7 @@
     .entry-title-full{
       position: relative;
       color: #333;
+      margin-top: 30px;
     }
   }
 }
@@ -89,62 +64,6 @@
   }
 }
 
-
-/* ------------------------------------
-    Comment Page
---------------------------------------*/
-
-/* ------------------------------------
-    Comment Style
---------------------------------------*/
-
-.page_comment{
-  border: none;
-  border-color: none;
-  box-shadow: none;
-
-  .panel-heading{
-    background: transparent;
-    padding: 0 0 10px;
-    text-transform: capitalize;
-    font-weight: 600;
-    font-size: 16px;
-  }
-
-  .panel-body{
-
-    p{
-      font-size: 15px;
-      padding: 0 10px 5px 90px;
-    }
-
-    .bCommentSmallPrint{
-      padding-top: 10px;
-    }
-  }
-
-  .permalink_right{
-    background: #ECECEC;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 13px;
-    color: #333;
-    .transition(all 0.32s ease-in-out);
-
-    &:hover{
-      background: #32B9D2;
-      color: #fff;
-      text-decoration: none;
-      .transition(all 0.32s ease);
-
-      span{
-        color: #fff !important;
-      }
-    }
-  }
-
-}
-
 h4.comment_text{
   text-transform: capitalize;
   font-size: 22px;
@@ -152,38 +71,11 @@ h4.comment_text{
   font-weight: 600;
 }
 
-#styled_content_block img.bCommentAvatar{
+.styled_content_block img.bCommentAvatar{
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
   border-radius: 100%;
   margin: 0 10px 10px 0;
-}
-
-.bPost .ratings_table{
-  margin-bottom: 30px;
-}
-
-.bComment{
-
-  .SaveButton{
-    background: #32B9D2;
-    border: none;
-    color: #fff;
-    font-weight: 600;
-    outline: none;
-  }
-
-  .preview.btn{
-    border: none;
-    background: #ECECEC;
-    outline: none;
-  }
-}
-
-.comment_notification,
-.feedback_feed_msg
-{
-  font-size: 15px;
 }

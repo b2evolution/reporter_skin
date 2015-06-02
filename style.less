@@ -9,7 +9,6 @@
 
 /*----------------  End of Themes Info  --------------------*/
 
-
 /**
  * IMPORT MIXINS
  * -----------------------------------------------------------------------------
@@ -89,6 +88,10 @@ img:not([draggable]), embed, object, video {
 --------------------------------------*/
 @import "less/page_style";
 
+/* ------------------------------------
+    Front Page Style
+--------------------------------------*/
+@import "less/front_page";
 
 /**
  * HEADER STYLE
@@ -124,7 +127,7 @@ img:not([draggable]), embed, object, video {
 }
 
 .nav.nav-tabs {
-  margin-top: 10px;
+  margin-top: 20px;
   border-bottom: none;
   margin-bottom: 24px;
 
@@ -321,11 +324,11 @@ div.compact_search_form {
     margin: 0;
   }
 }
-div.extended_search_form {
 
+div.extended_search_form {
   text-align: center;
   margin: 0 auto 2em auto;
-  max-width: 530px;
+  max-width: 620px;
 
   .search_options {
     text-align: center;
@@ -504,6 +507,7 @@ form.bComment {
 
   .small.text-muted {
     margin: 10px 0 20px;
+    font-family: "Merriweather", sans-serif;
 
     a, a .glyphicon {
       color: inherit;
@@ -748,10 +752,10 @@ div.action_messages, div.log_container {
   a{
     font-size: 13px;
     font-family: "Lato", sans-serif;
-    background: #eee;
+    background: #EDEDED;
     padding: 10px 20px;
     border-radius: 50px;
-    color: #666;
+    color: #756F6F;
     .transition(all 0.32s ease-in-out);
 
     &:hover{
@@ -766,7 +770,6 @@ div.action_messages, div.log_container {
 /* ------------------------------------
     Footer
 --------------------------------------*/
-
 .main_footer{
   padding: 60px 0 10px;
   font-size: 14px;
@@ -790,6 +793,13 @@ div.action_messages, div.log_container {
 /* ------------------------------------
     Disp Comment
 --------------------------------------*/
+
+#feedbacks{
+  border-top: 1px solid #E8E8E8;
+  margin-top: 10px;
+}
+
+
 
 .disp_comments{
 

@@ -75,7 +75,7 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 
 		// We want to display the post time:
 		$Item->issue_time( array(
-				'before'      => ' '.T_('Posted on '),
+				'before'      => ' '.T_(' Posted on '),
 				'after'       => ' ',
 				'time_format' => 'M j, Y',
 			) );
@@ -121,9 +121,9 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 	<?php
 		// List all tags attached to this post:
 		$Item->tags( array(
-				'before'    => '<div class="small">'.T_('Tags').': ',
+				'before'    => '<div class="small tags_single">'.T_('Tags').': ',
 				'after'     => '</div>',
-				'separator' => ', ',
+				'separator' => '',
 			) );
 	?>
 

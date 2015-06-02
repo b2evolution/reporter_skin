@@ -105,7 +105,7 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <!-- =================================== START OF MAIN AREA =================================== -->
 	<div class="row">
-		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-9' ); ?>"<?php
+		<div class="<?php echo ( $Skin->get_setting( 'layout' ) == 'single_column' ? 'col-md-12' : 'col-md-8' ); ?>"<?php
 				echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:right;"' : '' ); ?>>
 
 	<?php
@@ -342,7 +342,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	{
 	?>
 <!-- =================================== START OF SIDEBAR =================================== -->
-		<div class="col-md-3"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
+		<div class="col-md-4"<?php echo ( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ); ?>>
 
 	<?php
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------

@@ -15,7 +15,8 @@ body#reporter_skin, .pager li > span {
   font-weight: 900;
 }
 
-body.disp_single{
+body.disp_single,
+body.disp_page{
 
   .bPost_disp_single,
   .bPost{
@@ -31,8 +32,8 @@ body.disp_single{
 
       .bText,
       .evo_post__full_text{
-        letter-spacing: 0;
-        font-size: 18px;
+        letter-spacing: 0.2px;
+        font-size: 17px;
         font-family: "Merriweather", sans-serif;
         color: #515151;
         line-height: 1.8;
@@ -80,11 +81,9 @@ body.disp_single{
 /* ------------------------------------
     Single Full Width Background
 --------------------------------------*/
-
 .single_bg{
   margin: 0 0 30px;
   height: 680px;
-  max-height: 100%;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -101,12 +100,12 @@ body.disp_single{
     .entry-title-full{
       color: #fff;
       font-weight: 900;
-      font-size: 56px;
+      font-size: 50px;
       text-transform: capitalize;
       text-align: center;
       width: 100%;
       z-index: 1;
-      max-width: 750px;
+      max-width: 780px;
       margin: 0 auto;
       padding: 0 30px;
     }
@@ -114,7 +113,7 @@ body.disp_single{
     p{
       text-align: center;
       text-transform: capitalize;
-      font-size: 22px;
+      font-size: 20px;
       color: rgba(255, 255, 255, 0.94);
       font-weight: 400;
 
@@ -144,6 +143,7 @@ body.disp_single{
 
     .entry-title-full{
       color: #333;
+      margin-top: 30px;
     }
 
     p{
@@ -161,10 +161,9 @@ body.disp_single{
 /* ------------------------------------
     Style Image Legend
 --------------------------------------*/
+body.disp_single {
 
-.bPost_disp_single {
-
-    .image_legend{
+  .evo_image_legend{
       color: #B2B2B2;
       font-size: 14px;
       font-style: italic;
@@ -178,13 +177,15 @@ body.disp_single{
 // Large screens
 @media only screen and (min-width: 1200px){
 
-  .bPost_disp_single {
+  body.disp_single {
 
-    .image_block{
+    .image_block,
+    .evo_image_block{
       position: relative;
     }
 
-    .image_legend{
+    .image_legend,
+    .evo_image_legend{
       position: absolute;
       left: -30%;
       top: 0;
@@ -215,9 +216,11 @@ body.disp_single{
 /* ------------------------------------
     Typograpy
 --------------------------------------*/
-.bPost_disp_single {
+body.disp_single,
+body.disp_page {
 
-  .content_full{
+  .content_full,
+  .evo_post__full{
 
       h1, h2, h3, h4, h5, h6{
       font-weight: bold;
@@ -254,14 +257,44 @@ body.disp_single{
   }
 }
 
+.tags_single{
+  display: block;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #555;
+
+  a{
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 12px;
+    display: inline-block;
+    padding: 4px 10px;
+    color: #646262;
+    background-color: #EDEDED;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin: 2px;
+
+    &:hover{
+      text-decoration: none;
+      background: #32B9D2;
+      color: #fff;
+      border-color: #32B9D2;
+    }
+  }
+}
+
 
 /* ------------------------------------
     Comment Style
 --------------------------------------*/
 
-.single_comment{
+.single_comment,
+.page_comment,
+.comment_form{
   border: none;
-  border-color: none;
+  border-color: transparent;
   box-shadow: none;
 
   .panel-heading{
@@ -306,14 +339,41 @@ body.disp_single{
 
 }
 
-h4.comment_text{
-  text-transform: capitalize;
-  font-size: 22px;
-  margin: 30px 0 10px;
-  font-weight: 600;
+
+/**
+ * COMMENT FORM STYLE
+ * -----------------------------------------------------------------------------
+ */
+ .evoComment, .comment_form{
+
+   .pannel-heading{
+     border-color: #E8E8E8;
+   }
+
+   .evoComment-text{
+
+     line-height: 1.4;
+   }
+
 }
 
-#styled_content_block img.bCommentAvatar{
+
+h4.comment_text,
+h4.evoComment-title{
+  text-transform: capitalize;
+  font-size: 18px;
+  margin: 30px 0 0;
+  font-weight: 600;
+  color: #484848;
+
+  a{
+    &:hover{
+      background-color: transparent;
+    }
+  }
+}
+
+.styled_content_block img.bCommentAvatar{
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -322,11 +382,37 @@ h4.comment_text{
   margin: 0 10px 10px 0;
 }
 
+.evoComment-avatar {
+  float: left;
+}
+
 .bPost .ratings_table{
   margin-bottom: 30px;
 }
 
-.bComment{
+.form-group{
+  margin-top: 10px;
+
+  label.control-label{
+    text-align: left;
+    padding-left: 15px;
+  }
+}
+
+.bComment,
+.evo_form__comment{
+
+  .btn{
+    padding: 10px 18px;
+    font-size: 14px;
+    margin: 2px 0;
+
+    &:active, &:focus{
+      box-shadow: none;
+      border: none;
+      outline: none
+    }
+  }
 
   .SaveButton{
     background: #32B9D2;
@@ -344,9 +430,11 @@ h4.comment_text{
 }
 
 .comment_notification,
-.feedback_feed_msg
-{
+.feedback_feed_msg,
+.evo_post_comment_notification,
+.evo_post_feedback_feed_msg {
   font-size: 15px;
+  text-align: center;
 }
 
 
@@ -406,7 +494,8 @@ h4.comment_text{
     }
   }
 
-  .content_full .bText {
+  .content_full .bText,
+  .evo_post__full .evo_post__full_text {
     letter-spacing: 0.6px;
     font-size: 1em;
     line-height: 1.6;

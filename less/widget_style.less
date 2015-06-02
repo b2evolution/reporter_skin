@@ -101,7 +101,7 @@
     .search_field{
       height: 40px;
       border-radius: 50px;
-      // width: 300px;
+      width: 300px;
     }
 
     .input-group-btn{
@@ -183,23 +183,26 @@
 /* ------------------------------------
     Tag Cloud
 --------------------------------------*/
-.tag_cloud {
+.widget_core_coll_tag_cloud{
 
-  a{
-    display: inline-block;
-    padding: 8px 16px;
-    margin: 2px 0;
-    background: #eee;
-    border-radius: 5px;
-    color: #333;
-    font-size: 14px !important;
-    text-transform: capitalize;
-    .transition(all 0.32s ease-in-out);
+  .tag_cloud {
 
-    &:hover{
-      text-decoration: none;
-      background: #32B9D2;
-      color: #fff;
+    a{
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 2px 0;
+      background: #eee;
+      border-radius: 5px;
+      color: #333;
+      font-size: 13px !important;
+      text-transform: capitalize;
+      .transition(all 0.32s ease-in-out);
+
+      &:hover{
+        text-decoration: none;
+        background: #32B9D2 !important;
+        color: #fff;
+      }
     }
   }
 }
@@ -236,7 +239,6 @@
 /* ------------------------------------
     Comment Widget Style
 --------------------------------------*/
-
 .widget.widget_core_coll_comment_list{
 
   ul{
@@ -246,4 +248,16 @@
       line-height: 1.35;
     }
   }
+}
+
+
+.widget_core_user_links{
+
+  .ufld_icon_links{
+    a{
+      margin: 2px 3px;
+      background-color: #B3B3B3;
+    }
+  }
+
 }
