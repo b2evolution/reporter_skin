@@ -53,7 +53,7 @@ a, b, div, ul, li{
 }
 
 a:hover{
-  .transition(all 0.32s ease-in-out);
+  // .transition(all 0.32s ease-in-out);
 }
 
 a:focus,
@@ -125,6 +125,47 @@ img:not([draggable]), embed, object, video {
     text-align: right;
   }
 }
+
+
+////////////////////////////////////////////////////////////////
+// NAVBAR
+
+nav#nav{
+  z-index: 999;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+body.disp_single nav#nav{
+  margin-bottom: 0;
+}
+
+.navbar-header{
+  background: #EDEDED;
+  margin: 0 -15px;
+  padding: 0 20px;
+
+  .navbar-toggle{
+    border-color: #333;
+
+    .icon-bar{
+      background-color: #333;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .main_nav{
+    li{
+      width: 100%;
+
+      a{
+        margin-right: 0 !important;
+      }
+    }
+  }
+}
+
 
 .nav.nav-tabs {
   margin-top: 20px;
@@ -795,7 +836,7 @@ div.action_messages, div.log_container {
 --------------------------------------*/
 
 #feedbacks{
-  border-top: 1px solid #E8E8E8;
+  // border-top: 1px solid #E8E8E8;
   margin-top: 10px;
 }
 

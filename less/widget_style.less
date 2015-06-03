@@ -97,11 +97,16 @@
 
   .compact_search_form{
     position: relative;
+    max-width: 400px;
+    width: 100%;
+
+    .input-group{
+      width: 100%;
+    }
 
     .search_field{
       height: 40px;
       border-radius: 50px;
-      width: 300px;
     }
 
     .input-group-btn{
@@ -132,7 +137,8 @@
       .search_field{
         height: 40px;
         border-radius: 50px;
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
       }
     }
   }
@@ -201,7 +207,7 @@
       &:hover{
         text-decoration: none;
         background: #32B9D2 !important;
-        color: #fff;
+        color: #fff !important;
       }
     }
   }

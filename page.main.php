@@ -62,32 +62,46 @@ siteskin_include( '_site_body_header.inc.php' );
   <!-- container Page Top -->
   <div class="single_menu">
     <div class="container">
-      <nav class="row">
-        <div class="col-md-12">
-          <ul class="nav nav-tabs single_nav">
-            <?php
-              // ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-              // Display container and contents:
-              // Note: this container is designed to be a single <ul> list
-              skin_container( NT_('Menu'), array(
-                  // The following params will be used as defaults for widgets included in this container:
-                  'block_start'         => '',
-                  'block_end'           => '',
-                  'block_display_title' => false,
-                  'list_start'          => '',
-                  'list_end'            => '',
-                  'item_start'          => '<li>',
-                  'item_end'            => '</li>',
-                  'item_selected_start' => '<li class="active">',
-                  'item_selected_end'   => '</li>',
-                  'item_title_before'   => '',
-                  'item_title_after'    => '',
-                ) );
-              // ----------------------------- END OF "Menu" CONTAINER -----------------------------
-            ?>
-          </ul>
-        </div> <!-- end col-md-12 -->
-      </nav> <!-- end nav -->
+
+      <nav class="row" id="nav">
+    		<div class="col-md-12">
+    			<div class="navbar-header">
+    				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#reporter_nav">
+    					<span class="sr-only">Toggle navigation</span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    					<span class="icon-bar"></span>
+    				</button>
+    				<!-- <a class="navbar-brand" href="#">Brand</a> -->
+    			</div>
+
+    			<div class="col-md-12 collapse navbar-collapse" id="reporter_nav">
+    				<ul class="nav nav-tabs main_nav">
+    					<?php
+    						// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+    						// Display container and contents:
+    						// Note: this container is designed to be a single <ul> list
+    						skin_container( NT_('Menu'), array(
+    								// The following params will be used as defaults for widgets included in this container:
+    								'block_start'         => '',
+    								'block_end'           => '',
+    								'block_display_title' => false,
+    								'list_start'          => '',
+    								'list_end'            => '',
+    								'item_start'          => '<li>',
+    								'item_end'            => '</li>',
+    								'item_selected_start' => '<li class="active">',
+    								'item_selected_end'   => '</li>',
+    								'item_title_before'   => '',
+    								'item_title_after'    => '',
+    							) );
+    						// ----------------------------- END OF "Menu" CONTAINER -----------------------------
+    					?>
+    				</ul>
+    			</div>
+    		</div>
+    	</nav>
+
     </div><!-- End container PageTop -->
   </div> <!-- End Single Menu -->
 

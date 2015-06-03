@@ -1,4 +1,5 @@
 .evo_container__front_page_primary{
+  padding-right: 30px;
 
   .jumbotron{
 
@@ -12,47 +13,229 @@
     }
 
     .evo_post__full_text{
-      font-size: 16px;
+      font-size: 17px;
       letter-spacing: 1px;
       line-height: 26px;
-      // font-family: "Merriweather", sans-serif;
-
+      
       p{
-        font-size: 16px;
+        font-size: 17px;
       }
     }
   }
 
   .evo_widget{
+    margin: 10px 0 20px;
+
+    h3{
+      position: relative;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+      margin: 35px 0 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 1px;
+
+      &::before{
+        content: '';
+        position: absolute;
+        top: -1px;
+        height: 1px;
+        width: 20%;
+        background-color: #7C7C7C;
+      }
+    }
 
     a{
-      color: #205A84;
-      font-size: 16px;
-      letter-spacing: 0.5px;
+      color: #565656;
+      font-size: 15px;
+      letter-spacing: 0.8px;
 
       &:hover{
+        color: #379ABD;
         background-color: transparent;
       }
     }
 
-    & > ul {
-      & > li {
-        padding: 8px 0;
-        border-bottom: 1px solid #F4F4F4;
+    ul{
+      list-style-type: square;
+      margin: 0;
+
+      li{
+        list-style-type: square;
       }
     }
 
+    & > ul{
+      padding-left: 20px;
+    }
 
-    &.widget_core_coll_post_list{
+    &.widget_core_coll_post_list,
+    &.widget_core_coll_comment_list,
+    &.widget_core_coll_category_list,
+    &.widget_core_coll_common_links,
+    &.widget_core_coll_xml_feeds,
+    &.widget_core_content_hierarchy,
+    &.widget_core_coll_item_list,
+    &.widget_core_coll_related_post_list,
+    &.widget_core_colls_list_public,
+    &.widget_core_user_tools,
+    &.widget_plugin_evo_Arch{
       ul{
-
-        li{
+        & > li {
           padding: 8px 0;
+          border-bottom: 1px solid #F4F4F4;
+          color: #777;
         }
       }
     }
 
-  }
+    &.widget_core_free_html{
+      color: #777;
 
+      h3{
+        color: #333;
+      }
+    }
+
+    &.widget_core_profile_menu_link{
+
+      ul, li{
+        list-style-type: none;
+
+        a{
+          vertical-align: middle;
+          img{
+            -o-border-radius: 100%;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+
+    &.widget_core_coll_search_form{
+      .compact_search_form{
+        // position: relative;
+        width: 100%;
+        max-width: 400px;
+
+        .search_field{
+          position: relative;
+          width: 100%;
+        }
+
+        .search_submit{
+          position: absolute;
+          right: 20px;
+          background-color: transparent;
+          color: rgba(51, 51, 51, 0.64);
+          font-weight: bold;
+          text-transform: uppercase;
+          border-color: transparent;
+          top: 3px;
+        }
+      }
+    }
+
+    &.widget_core_content_hierarchy{
+      a{
+        font-style: normal;
+      }
+    }
+
+    &.widget_core_coll_xml_feeds{
+      .notes{
+        padding-top: 10px;
+        padding-left: 20px;
+      }
+    }
+
+    &.widget_core_linkblog{
+      ul{
+        li{
+          padding: 8px 0;
+          border-bottom: 1px solid #eee;
+        }
+
+        ul > li:last-child{
+          border-bottom: none;
+        }
+
+        ul li:first-child{
+          border-top: 1px solid #eee;
+          margin-top: 8px;
+        }
+      }
+    }
+
+    &.widget_core_coll_media_index{
+      ul{
+        li{
+          padding: 5px 0;
+
+          .note{
+            padding-left: 15px;
+          }
+        }
+      }
+
+      .widget_flow_blocks{
+        .note{
+          padding-left: 15px;
+        }
+      }
+    }
+
+    &.widget_plugin_evo_Calr{
+
+      caption{
+        text-transform: uppercase;
+        text-align: center;
+        background-color: #eee;
+        padding: 10px 15px;
+        font-size: 20px;
+      }
+
+      td{
+        padding: 15px 20px;
+        border-left: 1px solid #eee;
+        border-top: 1px solid #eee;
+        font-size: 14px;
+
+        &:last-child{
+          border-right: 1px solid #eee;
+        }
+      }
+
+      thead{
+        th{
+          font-size: 15px;
+          text-align: center;
+          padding: 15px;
+          border-left: 1px solid #eee;
+
+          &:last-child{
+            border-right: 1px solid #eee;
+          }
+        }
+      }
+
+      tfoot{
+        background-color: #eee;
+      }
+
+      #bCalendarToday{
+        background-color: #eee;
+        color: #333;
+        font-weight: 700;
+        border-color: #8B8B8B;
+      }
+
+    }
+
+
+  }
 
 }
