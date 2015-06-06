@@ -240,7 +240,7 @@ siteskin_include( '_site_body_header.inc.php' );
           ) );
         // Note: Double quotes have been used around "Footer" only for test purposes.
       ?>
-      <p>
+      <div class="copyright">
         <?php
           // Display footer text (text can be edited in Blog Settings):
           $Blog->footer_text( array(
@@ -279,7 +279,7 @@ siteskin_include( '_site_body_header.inc.php' );
               'item_end'    => ' ',
             ) );
         ?>
-      </p>
+      </div>
 
       <?php
         // Please help us promote b2evolution and leave this logo on your blog:

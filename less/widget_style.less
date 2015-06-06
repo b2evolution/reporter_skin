@@ -1,6 +1,129 @@
-///////////////////////////////////////////////////
-////////////////// WIDGET STYLE ///////////////////
-///////////////////////////////////////////////////
+/**
+ * WIDGET STYLE
+ * -----------------------------------------------------------------------------
+ */
+#sidebar{
+
+  .widget{
+
+
+    .panel-body > ul{
+      padding-left: 15px;
+    }
+
+    ul{
+      list-style-type: circle;
+      margin: 0;
+
+      li{
+        padding: 8px 0;
+
+        a{
+          color: rgba(51, 51, 51, 0.81);
+
+          &:hover{
+            color: @hover;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+
+    &.widget_core_coll_category_list,
+    &.widget_core_colls_list_owner,
+    &.widget_core_coll_xml_feeds,
+    &.widget_core_coll_post_list,
+    &.widget_core_coll_common_links,
+    &.widget_core_content_hierarchy,
+    &.widget_core_coll_item_list,
+    &.widget_core_coll_related_post_list,
+    &.widget_core_colls_list_public,
+    &.widget_core_user_tools,
+    &.widget_plugin_evo_Arch,
+    &.widget_plugin_evo_WhosOnline{
+
+      ul{
+
+        li{
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+
+    &.widget_core_coll_xml_feeds{
+      .notes{
+        padding-top: 10px;
+        padding-left: 15px;
+      }
+    }
+
+    &.widget_core_content_hierarchy{
+      a{
+        font-style: normal;
+      }
+    }
+
+    &.widget_core_coll_item_list{
+
+      .item_excerpt{
+        color: rgba(51, 51, 51, 0.60);
+      }
+
+    }
+
+    &.widget_core_coll_post_list,
+    &.widget_core_coll_related_post_list{
+
+      .item_images{
+        padding-top: 10px;
+      }
+
+      .item_first_image{
+        padding-bottom: 10px;
+      }
+    }
+
+    &.widget_core_colls_list_public,
+    &.widget_core_colls_list_owner,
+    &.widget_plugin_evo_Arch,
+    &.widget_plugin_evo_WhosOnline{
+      ul{
+        padding-left: 28px;
+        margin-top: 10px;
+      }
+    }
+
+    &.widget_core_linkblog{
+      ul{
+
+        li{
+          padding: 8px 0;
+        }
+
+        & > li{
+          border-bottom: 1px solid #eee;
+        }
+
+        ul li{
+
+          &:first-child{
+            border-top: 1px solid #eee;
+            margin-top: 8px;
+          }
+
+          &:last-child{
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
 .panel.widget{
   border: none;
   box-shadow: none;
@@ -33,34 +156,6 @@
       }
     }
   }
-
-  .panel-body{
-    padding: 15px 10px;
-  }
-
-  ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    li{
-      padding: 6px 0;
-      margin: 0 0 0 20px;
-      text-transform: capitalize;
-      font-size: 15px;
-      list-style-type: circle;
-
-      a{
-        color: #333;
-        .transition(all 0.32s ease);
-
-        &:hover{
-
-        }
-      }
-    }
-  }
-
 }
 
 
@@ -78,17 +173,12 @@
   }
 }
 
-
 .widget_core_coll_longdesc{
-
-  .panel-heading{
-
-  }
-
   .pannel-body{
     text-align: center;
   }
 }
+
 
 /* ------------------------------------
     Search
@@ -123,7 +213,6 @@
         text-transform: uppercase;
       }
     }
-
   }
 }
 
@@ -138,50 +227,9 @@
         height: 40px;
         border-radius: 50px;
         width: 100%;
-        max-width: 300px;
+        // max-width: 300px;
       }
     }
-  }
-}
-
-
-/* ------------------------------------
-    Widget Categories
---------------------------------------*/
-
-.widget_core_coll_category_list{
-
-  .panel-body{
-
-    ul{
-      list-style-type: circle;
-      margin: 0;
-      padding: 0;
-
-      & > li{
-        padding: 0;
-        margin: 5px 20px;
-
-        & > a{
-          color: #333;
-        }
-      }
-    }
-
-    ul ul{
-      padding: 0;
-      margin: 0;
-
-      li{
-        margin: 5px 0;
-
-        a{
-
-        }
-      }
-    }
-
-
   }
 }
 
@@ -217,27 +265,10 @@
 /* ------------------------------------
     List Post Widget
 --------------------------------------*/
-
 .panel.widget_core_coll_post_list{
 
-
-  ul {
-
-    li{
-      list-style-type: octal;
-      margin: 0 0px 0 35px;
-
-      a{
-        color: #333;
-
-      }
-    }
-  }
-
   .item_title {
-    line-height: 1.3;
-    border-bottom: 1px solid rgba(204, 204, 204, 0.3);
-    padding-bottom: 15px;
+    line-height: 1.2;
   }
 }
 
@@ -256,14 +287,70 @@
   }
 }
 
+.ufld_icon_links{
+  a{
+    margin: 2px 3px;
+    background: #B3B3B3;
+  }
+}
 
-.widget_core_user_links{
+/* ------------------------------------
+    Widget Calender
+--------------------------------------*/
+.widget_plugin_evo_Calr{
+  .bCalendarTable{
+    width: 80%;
 
-  .ufld_icon_links{
-    a{
-      margin: 2px 3px;
-      background-color: #B3B3B3;
+    caption{
+      text-align: center;
+      font-size: 20px;
+      padding: 12px;
+      background: #eee;
+
+      a{
+        color: #333;
+        text-transform: uppercase;
+      }
+    }
+
+    thead{
+
+      th{
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        border-left: 1px solid #eee;
+
+        &:last-child{
+          border-right: 1px solid #eee;
+        }
+      }
+    }
+
+    tbody{
+      td{
+        padding: 10px 0;
+        border-left:1px solid #eee;
+        border-bottom: 1px solid #eee;
+
+        &:last-child{
+          border-right: 1px solid #eee;
+        }
+      }
+    }
+
+    tfoot{
+      background-color: #eee;
+      td{
+        padding: 10px;
+      }
+    }
+
+    #bCalendarToday{
+      background: #eee;
+      border-color: #eee;
+      font-weight: 700;
+
     }
   }
-
 }

@@ -15,6 +15,13 @@
  */
 @import "less/mixins";
 
+/**
+ * Variabel
+ * -----------------------------------------------------------------------------
+ */
+@link: #379ABD;
+@hover: #32B9D2;
+
 
 /**
  * Goole Font
@@ -89,9 +96,10 @@ img:not([draggable]), embed, object, video {
 @import "less/page_style";
 
 /* ------------------------------------
-    Front Page Style
+    Disp Style
 --------------------------------------*/
 @import "less/front_page";
+@import "less/disp_style";
 
 /**
  * HEADER STYLE
@@ -142,7 +150,7 @@ body.disp_single nav#nav{
 
 .navbar-header{
   background: #EDEDED;
-  margin: 0 -15px;
+  // margin: 0 -15px;
   padding: 0 20px;
 
   .navbar-toggle{
@@ -809,32 +817,8 @@ div.action_messages, div.log_container {
 
 
 /* ------------------------------------
-    Footer
+    Comment
 --------------------------------------*/
-.main_footer{
-  padding: 60px 0 10px;
-  font-size: 14px;
-
-  p{
-    text-transform: uppercase;
-
-    a{
-      text-decoration: none;
-      color: #454545;
-
-      &:hover{
-        color: #2A7FC7;
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-
-/* ------------------------------------
-    Disp Comment
---------------------------------------*/
-
 #feedbacks{
   // border-top: 1px solid #E8E8E8;
   margin-top: 10px;
@@ -848,4 +832,27 @@ div.action_messages, div.log_container {
     float: left;
   }
 
+}
+
+/* ------------------------------------
+    Footer
+--------------------------------------*/
+.main_footer{
+  padding: 60px 0 10px;
+  font-size: 14px;
+
+  .copyright{
+    padding-top: 40px;
+    text-transform: uppercase;
+
+    a{
+      text-decoration: none;
+      color: #454545;
+
+      &:hover{
+        color: #2A7FC7;
+        text-decoration: underline;
+      }
+    }
+  }
 }
