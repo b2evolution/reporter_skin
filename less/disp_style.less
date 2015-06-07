@@ -110,3 +110,91 @@ body.disp_catdir{
 
   }
 }
+
+
+/**
+ * DISP SEARCH STYLE
+ * -----------------------------------------------------------------------------
+ */
+
+body.disp_search{
+
+  h2{
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .widget_core_coll_search_form{
+    .extended_search_form{
+
+      .search_field{
+        height: 45px;
+        font-size: 16px;
+        padding: 15px;
+        border-color: rgba(51, 51, 51, 0.2);
+
+        &:focus{
+          box-shadow: none;
+          border-color: #32B9D2;
+        }
+      }
+
+      .search_field:focus + .input-group-btn .search_submit{
+        background-color: #32B9D2;
+        border-color: #32B9D2;
+      }
+
+      .search_submit{
+        height: 45px;
+        width: 80px;
+        font-size: 18px;
+        font-weight: 700;
+        background: rgba(51, 51, 51, 0.2);
+        border-color: transparent;
+
+        &:hover{
+          background-color: #32B9D2;
+          border-color: #32B9D2;
+        }
+
+        &:focus, &:active{
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .pagination{
+    margin-top: 15px;
+
+    li{
+      span, a{
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .search_result{
+    margin-bottom: 15px;
+
+    a{
+      text-decoration: none;
+      line-height: 1px;
+    }
+
+    .search_title{
+      line-height: 1.1;
+      letter-spacing: 0.6px;
+      margin-bottom: 10px;
+    }
+
+    .result_content{
+      letter-spacing: 0.6px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+  }
+
+}
