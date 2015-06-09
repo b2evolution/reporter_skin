@@ -1,10 +1,6 @@
 ////////////////////////////////////////
 //////////    Style Content ////////////
 ////////////////////////////////////////
-#single_header{
-  // margin-top: -10px;
-}
-
 body#reporter_skin .pager li > a
 body#reporter_skin, .pager li > span {
   border-radius: 50px;
@@ -41,7 +37,6 @@ body.disp_page{
   }
 
 }
-
 
 .bPost_disp_single{
 
@@ -95,7 +90,8 @@ body.disp_page{
     .entry-title-full{
       color: #fff;
       font-weight: 900;
-      font-size: 50px;
+      letter-spacing: 0.8px;
+      font-size: 48px;
       text-transform: capitalize;
       text-align: center;
       width: 100%;
@@ -310,15 +306,15 @@ body.disp_page {
   }
 
   .permalink_right{
-    background: #ECECEC;
-    padding: 4px 10px;
-    border-radius: 5px;
-    font-size: 13px;
-    color: #444;
-    .transition(all 0.32s ease);
+    background: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
 
     &:hover{
-      background: #32B9D2;
+      background: @hover;
       color: #fff;
       text-decoration: none;
 
@@ -351,15 +347,27 @@ body.disp_page {
 
 }
 
-
-h4.comment_text,
-h4.evoComment-title{
-  font-family: "Merriweather" sans-serif;
+h4.comment_text{
+  // font-family: "Merriweather" sans-serif;
   text-transform: capitalize;
-  font-size: 16px;
-  margin: 30px 0 0;
+  font-size: 24px;
+  margin: 30px 0 20px;
   font-weight: 600;
   color: rgba(51, 51, 51, 0.81);
+
+  a{
+    &:hover{
+      background-color: transparent;
+    }
+  }
+}
+
+h4.evoComment-title{
+  font-weight: 600;
+  color: rgba(51, 51, 51, 0.81);
+  font-size: 18px;
+  // letter-spacing: 0.8px;
+  padding-bottom: 2px;
 
   a{
     &:hover{

@@ -41,7 +41,11 @@ body.disp_comments{
         letter-spacing: 0.4px;
 
         p{
-          line-height: 18px;
+          line-height: 22px;
+          font-family: "Merriweather", sans-serif;
+          font-size: 14px;
+          letter-spacing: 0.8px;
+          color: rgba(51, 51, 51, 0.81);
         }
 
         .evo_comment_avatar{
@@ -61,13 +65,17 @@ body.disp_comments{
             padding: 5px 10px;
             font-size: 12px;
             border-radius: 3px;
-            color: #333;
+            color: #555;
             font-weight: 700;
 
             &:hover{
               text-decoration: none;
               background: @hover;
-              color: #fff;
+              color: #fff !important;
+
+              span{
+                color: #fff !important
+              }
             }
           }
         }
