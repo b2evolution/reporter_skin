@@ -6,19 +6,23 @@
     .post_title{
       h2{
         font-weight: 700;
+        display: inline-block;
+        padding-right: 10px;
+
         a{
           color: #41494C;
+
+          &:hover{
+            color: @hover;
+          }
         }
       }
     }
 
     .evo_post__full_text{
-      font-size: 17px;
-      letter-spacing: 1px;
-      line-height: 26px;
 
       p{
-        font-size: 17px;
+        font-size: 16px;
       }
     }
   }
@@ -48,7 +52,7 @@
 
     a{
       color: #379ABD;
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 0.8px;
 
       &:hover{
@@ -188,7 +192,7 @@
     }
 
     &.widget_plugin_evo_Calr{
-      overflow: hidden;      
+      overflow: hidden;
 
       caption{
         text-transform: uppercase;

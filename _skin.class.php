@@ -28,7 +28,7 @@ class reporter_Skin extends Skin
 	 */
 	function get_default_name()
 	{
-		return 'Starter';
+		return 'Reporter';
 	}
 	/**
 	 * Get default type for the skin.

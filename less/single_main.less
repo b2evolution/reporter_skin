@@ -1,7 +1,6 @@
 ////////////////////////////////////////
 //////////    Style Content ////////////
 ////////////////////////////////////////
-
 #single_header{
   // margin-top: -10px;
 }
@@ -13,6 +12,7 @@ body#reporter_skin, .pager li > span {
 
 .entry-title {
   font-weight: 900;
+  letter-spacing: 0.8px;
 }
 
 body.disp_single,
@@ -32,11 +32,6 @@ body.disp_page{
 
       .bText,
       .evo_post__full_text{
-        letter-spacing: 0.2px;
-        font-size: 17px;
-        font-family: "Merriweather", sans-serif;
-        color: #515151;
-        line-height: 1.8;
 
         p{
           margin-bottom: 22px;
@@ -289,7 +284,6 @@ body.disp_page {
 /* ------------------------------------
     Comment Style
 --------------------------------------*/
-
 .single_comment,
 .page_comment,
 .comment_form{
@@ -299,8 +293,7 @@ body.disp_page {
 
   .panel-heading{
     background: transparent;
-    padding: 0 0 10px;
-    text-transform: uppercase;
+    padding: 0 0 6px;
     font-weight: 600;
     font-size: 15px;
   }
@@ -308,8 +301,7 @@ body.disp_page {
   .panel-body{
 
     p{
-      font-size: 15px;
-      padding: 0 10px 5px 90px;
+      padding: 0 10px 0px 90px;
     }
 
     .bCommentSmallPrint{
@@ -319,17 +311,16 @@ body.disp_page {
 
   .permalink_right{
     background: #ECECEC;
-    padding: 5px 10px;
+    padding: 4px 10px;
     border-radius: 5px;
     font-size: 13px;
-    color: #333;
+    color: #444;
     .transition(all 0.32s ease);
 
     &:hover{
       background: #32B9D2;
       color: #fff;
       text-decoration: none;
-      .transition(all 0.32s ease);
 
       span{
         color: #fff !important;
@@ -351,8 +342,11 @@ body.disp_page {
    }
 
    .evoComment-text{
-
-     line-height: 1.4;
+      font-size: 14px;
+      font-family: "Merriweather", sans-serif ;
+      letter-spacing: 0.8px;
+      color: rgba(51, 51, 51, 0.81);
+      line-height: 22px;
    }
 
 }
@@ -360,11 +354,12 @@ body.disp_page {
 
 h4.comment_text,
 h4.evoComment-title{
+  font-family: "Merriweather" sans-serif;
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 16px;
   margin: 30px 0 0;
   font-weight: 600;
-  color: #484848;
+  color: rgba(51, 51, 51, 0.81);
 
   a{
     &:hover{
@@ -433,10 +428,10 @@ h4.evoComment-title{
 .feedback_feed_msg,
 .evo_post_comment_notification,
 .evo_post_feedback_feed_msg {
-  font-size: 15px;
+  font-size: 14px;
+  color: rgba(51, 51, 51, 0.81);
   text-align: center;
   font-family: "Merriweather", sans-serif;
-  font-size: 13px;
 }
 
 

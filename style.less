@@ -75,6 +75,33 @@ img:not([draggable]), embed, object, video {
 }
 
 
+/**
+ * TYPOGRAPY
+ * -----------------------------------------------------------------------------
+ */
+.evo_post__full{
+
+ .bText,
+ .evo_post__full_text{
+   font-family: "Merriweather", sans-serif;
+   line-height: 26px;
+   font-size: 16px !important;
+   letter-spacing: 0.8px;
+   color: rgba(51, 51, 51, 0.81);
+   margin-bottom: 25px;6
+
+   p{
+     margin-bottom: 15px;
+   }
+ }
+}
+
+
+/* ------------------------------------
+    Single Main Style
+--------------------------------------*/
+@import "less/base";
+
 /* ------------------------------------
     Single Main Style
 --------------------------------------*/
@@ -844,11 +871,12 @@ div.action_messages, div.log_container {
 --------------------------------------*/
 .main_footer{
   padding: 60px 0 10px;
-  font-size: 14px;
 
   .copyright{
+    font-size: 13px;
+    letter-spacing: 0.6px;
     padding-top: 40px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 
     a{
       text-decoration: none;
