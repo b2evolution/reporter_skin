@@ -19,7 +19,7 @@ class reporter_Skin extends Skin
 	/**
 	 * Do we want to use style.min.css instead of style.css ?
 	 */
-	var $use_min_css = 'check';  // true|false|'check' Set this to true for better optimization
+	var $use_min_css = true;  // true|false|'check' Set this to true for better optimization
 	// Note: we leave this on "check" in the bootstrap_blog_skin so it's easier for beginners to just delete the .min.css file
 	// But for best performance, you should set it to true.
 	/**
