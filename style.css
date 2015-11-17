@@ -2143,28 +2143,20 @@ body.disp_page .evo_post__full blockquote::before {
 }
 .tags_single {
   display: block;
-  font-size: 18px;
-  text-transform: uppercase;
+  font-size: 16px;
   font-weight: 700;
   color: #555;
 }
 .tags_single a {
   text-transform: capitalize;
   font-weight: 400;
-  font-size: 12px;
   display: inline-block;
-  padding: 4px 10px;
-  color: #646262;
-  background-color: #EDEDED;
-  border-radius: 3px;
-  vertical-align: middle;
-  margin: 2px;
+  color: #337ab7;
+  background-color: transparent;
 }
-.tags_single a:hover {
-  text-decoration: none;
-  background: #32B9D2;
-  color: #fff;
-  border-color: #32B9D2;
+.evo_intro_post .tags_single,
+.evo_featured_post .tags_single {
+  padding-bottom: 15px;
 }
 /* ------------------------------------
     Comment Style

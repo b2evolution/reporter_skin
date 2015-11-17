@@ -123,11 +123,11 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 		$Item->tags( array(
 				'before'    => '<div class="small tags_single">'.T_('Tags').': ',
 				'after'     => '</div>',
-				'separator' => '',
+				'separator' => ', ',
 			) );
 	?>
 
-	<div class="small">
+	<div>
 		<?php
 			// Link to comments, trackbacks, etc.:
 			$Item->feedback_link( array(

@@ -175,7 +175,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				'feature_block' => true,
 				'content_mode' => 'auto',		// 'auto' will auto select depending on $disp-detail
 				'intro_mode'   => 'normal',	// Intro posts will be displayed in normal mode
-				'item_class'   => '',
+				'item_class'   => ($Item->is_intro() ? 'evo_intro_post' : 'evo_featured_post'),
 			) );
 		echo '</div></div>';
 		// ----------------------------END ITEM BLOCK  ----------------------------
