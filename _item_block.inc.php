@@ -127,7 +127,7 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 			) );
 	?>
 
-	<div>
+	<div class="post-comments">
 		<?php
 			// Link to comments, trackbacks, etc.:
 			$Item->feedback_link( array(

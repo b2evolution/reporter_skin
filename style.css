@@ -2384,3 +2384,12 @@ body.disp_single .navbar-header {
   font-weight: 700;
   color: #555;
 }
+.evo_featured_post .post-comments {
+  margin-bottom: 20px;
+}
+.jumbotron .post_title h2 {
+  font-size: 30px;
+}
+.jumbotron ul {
+  margin-left: 25px !important;
+}
