@@ -188,6 +188,10 @@
 	margin-top: 0;
 }
 
+.disp_single .nav.nav-tabs {
+	    margin-top: 30px;
+}
+
 // Login widget form
 .widget_core_user_login {
 	#login_form {
@@ -1111,7 +1115,6 @@ form.bComment {
 
 .bPost {
   margin-bottom: 2em;
-
   .bTitle {
     margin: 0;
   }
@@ -2517,7 +2520,18 @@ body.disp_search{
 ///////////////////////////////////////////
 ///////////// Post Main Style /////////////
 ///////////////////////////////////////////
-body.disp_posts{
+
+.evo_intro_post .post_title h2 {
+	    font-weight: 900;
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+
+    a{
+      color: #555 !important
+    }
+}
+
+body.disp_posts {
 
   h2.title_posts{
     font-weight: 900;
@@ -2525,7 +2539,7 @@ body.disp_posts{
     letter-spacing: 0.8px;
 
     a{
-      color: #555;
+      color: #555 !important
     }
   }
 }
@@ -2548,6 +2562,10 @@ body.disp_posts{
   }
 }
 
+.disp_single .bPost .small.text-muted {
+	margin-top: 0px;
+    margin-bottom: 30px;
+}
 
 
 @media only screen and (max-width: 768px){

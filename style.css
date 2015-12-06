@@ -30,6 +30,9 @@
 .nav.nav-tabs {
   margin-top: 0;
 }
+.disp_single .nav.nav-tabs {
+  margin-top: 30px;
+}
 .widget_core_user_login #login_form .form-group {
   margin: 0;
 }
@@ -1788,13 +1791,21 @@ body.disp_search .search_result .result_content {
   border-color: #eee;
   font-weight: 700;
 }
+.evo_intro_post .post_title h2 {
+  font-weight: 900;
+  text-transform: capitalize;
+  letter-spacing: 0.8px;
+}
+.evo_intro_post .post_title h2 a {
+  color: #555 !important;
+}
 body.disp_posts h2.title_posts {
   font-weight: 900;
   text-transform: capitalize;
   letter-spacing: 0.8px;
 }
 body.disp_posts h2.title_posts a {
-  color: #555;
+  color: #555 !important;
 }
 .bPost_disp_posts,
 .bPost,
@@ -1815,6 +1826,10 @@ body.disp_posts h2.title_posts a {
 .bPost .evo_post__full .evo_post__full_text p,
 .featurepost .evo_post__full .evo_post__full_text p {
   margin-bottom: 15px;
+}
+.disp_single .bPost .small.text-muted {
+  margin-top: 0px;
+  margin-bottom: 30px;
 }
 @media only screen and (max-width: 768px) {
   .pageHeader {
