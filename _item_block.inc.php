@@ -50,11 +50,19 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 					) ).'</div>';
 			}
 
+			if( ! $Item->is_intro() ) {
 			$Item->title( array(
 					'before'    => $title_before,
 					'after'     => $title_after,
 					'link_type' => 'permalink'
 				) );
+			} else {
+			$Item->title( array(
+					'before'    => $title_before,
+					'after'     => $title_after,
+					'link_type' => '#'
+				) );
+			}
 		}
 	?>
 
@@ -119,12 +127,14 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 
 
 	<?php
-		// List all tags attached to this post:
+		if( ! $Item->is_intro() )
+		{ // List all tags attached to this post:
 		$Item->tags( array(
 				'before'    => '<div class="small tags_single">'.T_('Tags').': ',
 				'after'     => '</div>',
 				'separator' => ', ',
 			) );
+		}
 	?>
 
 	<div class="post-comments">

@@ -1808,23 +1808,18 @@ body.disp_posts h2.title_posts a {
   color: #555 !important;
 }
 .bPost_disp_posts,
-.bPost,
-.featurepost {
+.bPost {
   border-bottom: 1px solid #eee;
   padding-bottom: 20px;
 }
 .bPost_disp_posts .content_full .bText p,
 .bPost .content_full .bText p,
-.featurepost .content_full .bText p,
 .bPost_disp_posts .evo_post__full .bText p,
 .bPost .evo_post__full .bText p,
-.featurepost .evo_post__full .bText p,
 .bPost_disp_posts .content_full .evo_post__full_text p,
 .bPost .content_full .evo_post__full_text p,
-.featurepost .content_full .evo_post__full_text p,
 .bPost_disp_posts .evo_post__full .evo_post__full_text p,
-.bPost .evo_post__full .evo_post__full_text p,
-.featurepost .evo_post__full .evo_post__full_text p {
+.bPost .evo_post__full .evo_post__full_text p {
   margin-bottom: 15px;
 }
 .disp_single .bPost .small.text-muted {
