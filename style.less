@@ -168,9 +168,35 @@
 
 
 /**
+ * Module Includes
+ * -----------------------------------------------------------------------------
+ */
+ 
+ // --------- Universal item list widget & Recent posts widget ---------
+@import "../../rsc/less/_universal_item_list_widget.module.less";
+// --------------------------------------------------------------------
+
+// ------------------- Media Index widget --------------------
+@import "../../rsc/less/_coll_media_index_widget.module.less";
+// -----------------------------------------------------------
+
+// ----------- User Avatars (User List) widget ------------
+@import "../../rsc/less/_user_avatars_widget.module.less";
+// --------------------------------------------------------
+
+// -----------------About Author widget -------------------
+@import "../../rsc/less/_about_author_widget.module.less";
+// --------------------------------------------------------
+
+// ------------- Organization Members widget -------------
+@import "../../rsc/less/_org_members_widget.module.less";
+// -------------------------------------------------------
+
+/**
  * Goole Font
  * -----------------------------------------------------------------------------
  */
+ 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,700);
 
@@ -642,6 +668,9 @@ a:active{
 img:not([draggable]), embed, object, video {
     max-width: 100%;
     height: auto;
+}
+img.cboxPhoto {
+	max-width: none;
 }
 
 
@@ -3077,7 +3106,7 @@ h4.evoComment-title{
   margin: 0 10px 10px 0;
 }
 
-.evoComment-avatar {
+.evoComment-avatar, .evo_comment_avatar {
   float: left;
 }
 

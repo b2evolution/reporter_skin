@@ -1,29 +1,28 @@
 <?php
 /**
- * This is the template that displays the item block
+ * This is the template that displays the item block: title, author, content (sub-template), tags, comments (sub-template)
  *
  * This file is not meant to be called directly.
  * It is meant to be called by an include in the main.page.php template (or other templates)
  *
  * b2evolution - {@link http://b2evolution.net/}
  * Released under GNU GPL License - {@link http://b2evolution.net/about/gnu-gpl-license}
- * @copyright (c)2003-2015 by Francois Planque - {@link http://fplanque.com/}
+ * @copyright (c)2003-2016 by Francois Planque - {@link http://fplanque.com/}
  *
  * @package evoskins
- * @subpackage bootstrap
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
-global $Item, $Skin;
+global $Item, $Skin, $app_version;
 
 // Default params:
 $params = array_merge( array(
-		'feature_block'    => false,
-		'content_mode'     => 'auto',		// 'auto' will auto select depending on $disp-detail
-		'item_class'       => 'bPost',
-		'image_class'      => 'img-responsive',
-		'image_size'       => 'fit-1280x720',
-		'author_link_text' => 'preferredname',
+		'feature_block'    			 => false,
+		'content_mode'    			 => 'auto',		// 'auto' will auto select depending on $disp-detail
+		'item_class'    			 => 'bPost',
+		'image_class'                => 'img-responsive',
+		'image_size'                 => 'fit-1280x720',
+		'author_link_text'           => 'auto',
 	), $params );
 
 echo '<div class="styled_content_block">'; // Beginning of post display TODO: get rid of this ID, use class .evo_content_block instead
@@ -118,11 +117,43 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 	?>
 
 	<?php
+	if( $disp == 'single' )
+	{
+		?>
+		<div class="evo_container evo_container__item_single">
+		<?php
+		// ------------------------- "Item Single" CONTAINER EMBEDDED HERE --------------------------
+		// Display container contents:
+		skin_container( /* TRANS: Widget container name */ NT_('Item Single'), array(
+			'widget_context' => 'item',	// Signal that we are displaying within an Item
+			// The following (optional) params will be used as defaults for widgets included in this container:
+			// This will enclose each widget in a block:
+			'block_start' => '<div class="$wi_class$">',
+			'block_end' => '</div>',
+			// This will enclose the title of each widget:
+			'block_title_start' => '<h3>',
+			'block_title_end' => '</h3>',
+			// Template params for "Item Tags" widget
+			'widget_item_tags_before'    => '<div class="small">'.T_('Tags').': ',
+			'widget_item_tags_after'     => '</div>',
+			// Params for skin file "_item_content.inc.php"
+			'widget_item_content_params' => $params,
+		) );
+		// ----------------------------- END OF "Item Single" CONTAINER -----------------------------
+		?>
+		</div>
+		<?php
+	}
+	else
+	{
+	// this will create a <section>
 		// ---------------------- POST CONTENT INCLUDED HERE ----------------------
 		skin_include( '_item_content.inc.php', $params );
 		// Note: You can customize the default item content by copying the generic
 		// /skins/_item_content.inc.php file into the current skin folder.
 		// -------------------------- END OF POST CONTENT -------------------------
+	// this will end a </section>
+	}
 	?>
 
 
@@ -176,9 +207,29 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 	?>
 
 	<?php
+	if( evo_version_compare( $app_version, '6.7' ) >= 0 )
+	{	// We are running at least b2evo 6.7, so we can include this file:
+		// ------------------ WORKFLOW PROPERTIES INCLUDED HERE ------------------
+		skin_include( '_item_workflow.inc.php' );
+		// ---------------------- END OF WORKFLOW PROPERTIES ---------------------
+	}
+	?>
+
+	<?php
+	if( evo_version_compare( $app_version, '6.7' ) >= 0 )
+	{	// We are running at least b2evo 6.7, so we can include this file:
+		// ------------------ META COMMENTS INCLUDED HERE ------------------
+		skin_include( '_item_meta_comments.inc.php', array(
+				'comment_start'         => '<article class="evo_comment evo_comment__meta panel panel-default">',
+				'comment_end'           => '</article>',
+			) );
+		// ---------------------- END OF META COMMENTS ---------------------
+	}
+	?>
+
+	<?php
 		locale_restore_previous();	// Restore previous locale (Blog locale)
 	?>
 </div>
-
 
 <?php echo '</div>'; // End of post display ?>

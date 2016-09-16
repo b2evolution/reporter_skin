@@ -1,7 +1,5 @@
 <?php
 /**
- * This is the main/default page template for the "bootstrap" skin.
- *
  * This skin only uses one single template which includes most of its features.
  * It will also rely on default includes for specific dispays (like the comment form).
  *
@@ -16,9 +14,9 @@
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
-if( version_compare( $app_version, '5.0' ) < 0 )
+if( evo_version_compare( $app_version, '6.4' ) < 0 )
 { // Older skins (versions 2.x and above) should work on newer b2evo versions, but newer skins may not work on older b2evo versions.
-	die( 'This skin is designed for b2evolution 5.0 and above. Please <a href="http://b2evolution.net/downloads/index.html">upgrade your b2evolution</a>.' );
+	die( 'This skin is designed for b2evolution 6.4 and above. Please <a href="http://b2evolution.net/downloads/index.html">upgrade your b2evolution</a>.' );
 }
 
 // This is the main template; it may be used to display very different things.
@@ -217,13 +215,15 @@ siteskin_include( '_site_body_header.inc.php' );
 	<?php
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 		mainlist_page_links( array(
-				'block_start' => '<div class="center"><ul class="pagination">',
-				'block_end' => '</ul></div>',
-				'page_current_template' => '<span><b>$page_num$</b></span>',
-				'page_item_before' => '<li>',
-				'page_item_after' => '</li>',
-				'prev_text' => '&lt;&lt;',
-				'next_text' => '&gt;&gt;',
+						'block_start'           => '<div class="center"><ul class="pagination">',
+						'block_end'             => '</ul></div>',
+						'page_current_template' => '<span>$page_num$</span>',
+						'page_item_before'      => '<li>',
+						'page_item_after'       => '</li>',
+						'page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+						'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
+						'next_text'             => '<i class="fa fa-angle-double-right"></i>',
 			) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 
@@ -247,13 +247,15 @@ siteskin_include( '_site_body_header.inc.php' );
 					'block_end'           => '</ul>',
 				),
 				'pagination' => array(
-					'block_start'           => '<div class="center"><ul class="pagination">',
-					'block_end'             => '</ul></div>',
-					'page_current_template' => '<span><b>$page_num$</b></span>',
-					'page_item_before'      => '<li>',
-					'page_item_after'       => '</li>',
-					'prev_text'             => '&lt;&lt;',
-					'next_text'             => '&gt;&gt;',
+						'block_start'           => '<div class="center"><ul class="pagination">',
+						'block_end'             => '</ul></div>',
+						'page_current_template' => '<span>$page_num$</span>',
+						'page_item_before'      => '<li>',
+						'page_item_after'       => '</li>',
+						'page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+						'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
+						'next_text'             => '<i class="fa fa-angle-double-right"></i>',
 				),
 				// Form params for the forms below: login, register, lostpassword, activateinfo and msgform
 				'skin_form_before'      => '<div class="panel panel-default skin-form">'

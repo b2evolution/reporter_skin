@@ -1,6 +1,6 @@
 <?php
 /**
- * This is the main/default page template for the "bootstrap" skin.
+ * This is the main/default page template for the "Reporter" skin.
  *
  * This skin only uses one single template which includes most of its features.
  * It will also rely on default includes for specific dispays (like the comment form).
@@ -16,9 +16,9 @@
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
-if( version_compare( $app_version, '5.0' ) < 0 )
+if( evo_version_compare( $app_version, '6.4' ) < 0 )
 { // Older skins (versions 2.x and above) should work on newer b2evo versions, but newer skins may not work on older b2evo versions.
-	die( 'This skin is designed for b2evolution 5.0 and above. Please <a href="http://b2evolution.net/downloads/index.html">upgrade your b2evolution</a>.' );
+	die( 'This skin is designed for b2evolution 6.4 and above. Please <a href="http://b2evolution.net/downloads/index.html">upgrade your b2evolution</a>.' );
 }
 
 // This is the main template; it may be used to display very different things.
@@ -36,6 +36,7 @@ skin_include( '_html_header.inc.php', array() );
 siteskin_include( '_site_body_header.inc.php' );
 // ------------------------------- END OF SITE HEADER --------------------------------
 ?>
+
 
 <div class="container">
 	<header class="row">
@@ -243,13 +244,15 @@ siteskin_include( '_site_body_header.inc.php' );
 	<?php
 		// -------------------- PREV/NEXT PAGE LINKS (POST LIST MODE) --------------------
 		mainlist_page_links( array(
-				'block_start' => '<div class="center"><ul class="pagination">',
-				'block_end' => '</ul></div>',
-				'page_current_template' => '<span><b>$page_num$</b></span>',
-				'page_item_before' => '<li>',
-				'page_item_after' => '</li>',
-				'prev_text' => '&lt;&lt;',
-				'next_text' => '&gt;&gt;',
+						'block_start'           => '<div class="center"><ul class="pagination">',
+						'block_end'             => '</ul></div>',
+						'page_current_template' => '<span>$page_num$</span>',
+						'page_item_before'      => '<li>',
+						'page_item_after'       => '</li>',
+						'page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+						'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
+						'next_text'             => '<i class="fa fa-angle-double-right"></i>',
 			) );
 		// ------------------------- END OF PREV/NEXT PAGE LINKS -------------------------
 	}
@@ -273,13 +276,15 @@ siteskin_include( '_site_body_header.inc.php' );
 					'block_end'           => '</ul>',
 				),
 				'pagination' => array(
-					'block_start'           => '<div class="center"><ul class="pagination">',
-					'block_end'             => '</ul></div>',
-					'page_current_template' => '<span><b>$page_num$</b></span>',
-					'page_item_before'      => '<li>',
-					'page_item_after'       => '</li>',
-					'prev_text'             => '&lt;&lt;',
-					'next_text'             => '&gt;&gt;',
+						'block_start'           => '<div class="center"><ul class="pagination">',
+						'block_end'             => '</ul></div>',
+						'page_current_template' => '<span>$page_num$</span>',
+						'page_item_before'      => '<li>',
+						'page_item_after'       => '</li>',
+						'page_item_current_before' => '<li class="active">',
+						'page_item_current_after'  => '</li>',
+						'prev_text'             => '<i class="fa fa-angle-double-left"></i>',
+						'next_text'             => '<i class="fa fa-angle-double-right"></i>',
 				),
 				// Form params for the forms below: login, register, lostpassword, activateinfo and msgform
 				'skin_form_before'      => '<div class="panel panel-default skin-form">'
@@ -327,7 +332,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				'comment_avatar_position' => 'before_text',
 				'comment_start'         => '<div class="panel panel-default">',
 				'comment_end'           => '</div>',
-				'comment_post_before'   => '<div class="panel-heading"><h4 class="bTitle floatleft">',
+				'comment_post_before'   => '<div class="panel-heading"><h4 class="bTitle">',
 				'comment_post_after'    => '</h4>',
 				'comment_title_before'  => '<div class="floatright">',
 				'comment_title_after'   => '</div><div class="clear"></div></div><div class="panel-body">',
@@ -340,7 +345,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				'preview_start'         => '<div class="panel panel-warning" id="comment_preview">',
 				'preview_end'           => '</div>',
 				// Front page
-				'featured_intro_before' => '<div class="jumbotron">',
+				'featured_intro_before' => '<div class="jumbotron"><div class="intro_background_image"></div>',
 				'featured_intro_after'  => '</div>',
 				// Form "Sending a message"
 				'msgform_form_title' => T_('Sending a message'),
@@ -477,7 +482,5 @@ siteskin_include( '_site_body_footer.inc.php' );
 
 // ------------------------- HTML FOOTER INCLUDED HERE --------------------------
 skin_include( '_html_footer.inc.php' );
-// Note: You can customize the default HTML footer by copying the
-// _html_footer.inc.php file into the current skin folder.
 // ------------------------------- END OF FOOTER --------------------------------
 ?>
