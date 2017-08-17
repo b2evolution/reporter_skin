@@ -217,6 +217,9 @@
 .disp_single .nav.nav-tabs {
 	    margin-top: 30px;
 }
+.disp_single main .panel-heading .badge {
+	top: 1px;
+}
 
 // Login widget form
 .widget_core_user_login {
@@ -1537,6 +1540,10 @@ body.disp_comments{
     }
   }
 
+}
+
+.bCommentSmallPrint {
+	font-family: "Lato", sans-serif;
 }
 
 
@@ -3023,6 +3030,7 @@ body.disp_page {
 
     .bCommentSmallPrint{
       padding-top: 10px;
+	  font-family: "Lato", sans-serif;
     }
   }
 
@@ -3219,8 +3227,12 @@ body.disp_page, body.disp_single {
 				color: rgba(51, 51, 51, 0.81);
 			}
 			.floatright {
-				float: left !important;
+				float: none !important;
 				clear: both;
+				
+				.badge {
+					top: 6px;
+				}
 			}
 		}
 		.panel-body {
