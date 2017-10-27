@@ -74,30 +74,29 @@ siteskin_include( '_site_body_header.inc.php' );
       				<!-- <a class="navbar-brand" href="#">Brand</a> -->
       			</div>
 
-      			<div class="col-md-12 collapse navbar-collapse" id="reporter_nav">
-      				<ul class="nav nav-tabs main_nav">
-      					<?php
-      						// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
-      						// Display container and contents:
-      						// Note: this container is designed to be a single <ul> list
-      						skin_container( NT_('Menu'), array(
-      								// The following params will be used as defaults for widgets included in this container:
-      								'block_start'         => '',
-      								'block_end'           => '',
-      								'block_display_title' => false,
-      								'list_start'          => '',
-      								'list_end'            => '',
-      								'item_start'          => '<li>',
-      								'item_end'            => '</li>',
-      								'item_selected_start' => '<li class="active">',
-      								'item_selected_end'   => '</li>',
-      								'item_title_before'   => '',
-      								'item_title_after'    => '',
-      							) );
-      						// ----------------------------- END OF "Menu" CONTAINER -----------------------------
-      					?>
-      				</ul>
-      			</div>
+						<?php
+							// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
+							// Display container and contents:
+							// Note: this container is designed to be a single <ul> list
+							skin_container( NT_('Menu'), array(
+									// The following params will be used as defaults for widgets included in this container:
+									'container_display_if_empty' => true, // Display container anyway even if no widget
+									'container_start'     => '<div class="col-md-12 collapse navbar-collapse" id="reporter_nav"><ul class="nav nav-tabs main_nav evo_container $wico_class$">',
+									'container_end'       => '</ul></div>',
+									'block_start'         => '',
+									'block_end'           => '',
+									'block_display_title' => false,
+									'list_start'          => '',
+									'list_end'            => '',
+									'item_start'          => '<li>',
+									'item_end'            => '</li>',
+									'item_selected_start' => '<li class="active">',
+									'item_selected_end'   => '</li>',
+									'item_title_before'   => '',
+									'item_title_after'    => '',
+								) );
+							// ----------------------------- END OF "Menu" CONTAINER -----------------------------
+						?>
       		</div>
         </div>
     	</nav>
@@ -243,6 +242,9 @@ siteskin_include( '_site_body_header.inc.php' );
         // Display container and contents:
         skin_container( NT_("Footer"), array(
             // The following params will be used as defaults for widgets included in this container:
+			'container_display_if_empty' => true, // Display container anyway even if no widget
+			'container_start'     => '<div class="evo_container $wico_class$">',
+			'container_end'       => '</div>',
           ) );
         // Note: Double quotes have been used around "Footer" only for test purposes.
       ?>
