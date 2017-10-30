@@ -88,9 +88,9 @@ siteskin_include( '_site_body_header.inc.php' );
 									'block_display_title' => false,
 									'list_start'          => '',
 									'list_end'            => '',
-									'item_start'          => '<li>',
+									'item_start'          => '<li class="evo_widget $wi_class$">',
 									'item_end'            => '</li>',
-									'item_selected_start' => '<li class="active">',
+									'item_selected_start' => '<li class="evo_widget $wi_class$ active">',
 									'item_selected_end'   => '</li>',
 									'item_title_before'   => '',
 									'item_title_after'    => '',
@@ -248,9 +248,9 @@ siteskin_include( '_site_body_header.inc.php' );
         <div class="main_footer">
           <?php
             // Display container and contents:
-            skin_container( NT_("Footer"), array(
+            skin_container( NT_('Footer'), array(
                 // The following params will be used as defaults for widgets included in this container:
-				'container_display_if_empty' => true, // Display container anyway even if no widget
+				'container_display_if_empty' => false, // If no widget, don't display container at all
 				'container_start'     => '<div class="evo_container $wico_class$">',
 				'container_end'       => '</div>',
               ) );
