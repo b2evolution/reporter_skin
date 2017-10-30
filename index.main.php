@@ -40,14 +40,13 @@ siteskin_include( '_site_body_header.inc.php' );
 
 <div class="container">
 	<header class="row">
+		<div class="coll-xs-12 coll-sm-6 col-md-4 col-md-push-8">
+			<div class="PageTop">
 				<?php
 					// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
 					// Display container and contents:
 					skin_container( NT_('Page Top'), array(
 							// The following params will be used as defaults for widgets included in this container:
-							'container_display_if_empty' => true, // Display container anyway even if no widget
-							'container_start'     => '<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8"><div class="PageTop evo_container $wico_class$">',
-							'container_end'       => '</div></div>',
 							'block_start'         => '<div class="widget $wi_class$">',
 							'block_end'           => '</div>',
 							'block_display_title' => false,
@@ -58,15 +57,15 @@ siteskin_include( '_site_body_header.inc.php' );
 						) );
 					// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
 				?>
-				
+			</div>
+		</div>
+		<div class="coll-xs-12 col-sm-6 col-md-8 col-md-pull-4">
+			<div class="pageHeader">
 				<?php
 					// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
 					// Display container and contents:
 					skin_container( NT_('Header'), array(
 							// The following params will be used as defaults for widgets included in this container:
-							'container_display_if_empty' => true, // Display container anyway even if no widget
-							'container_start'   => '<div class="coll-xs-12 col-sm-6 col-md-8 col-md-pull-4"><div class="pageHeader evo_container $wico_class$">',
-							'container_end'     => '</div></div>',
 							'block_start'       => '<div class="widget $wi_class$">',
 							'block_end'         => '</div>',
 							'block_title_start' => '<h1 class="title_site">',
@@ -74,6 +73,8 @@ siteskin_include( '_site_body_header.inc.php' );
 						) );
 					// ----------------------------- END OF "Header" CONTAINER -----------------------------
 				?>
+			</div>
+		</div>
 	</header>
 
 	<nav class="row" id="nav">
@@ -89,15 +90,14 @@ siteskin_include( '_site_body_header.inc.php' );
 					<!-- <a class="navbar-brand" href="#">Brand</a> -->
 				</div>
 
+				<div class="col-md-12 collapse navbar-collapse" id="reporter_nav">
+					<ul class="nav nav-tabs main_nav">
 						<?php
 							// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
 							// Display container and contents:
 							// Note: this container is designed to be a single <ul> list
 							skin_container( NT_('Menu'), array(
 									// The following params will be used as defaults for widgets included in this container:
-									'container_display_if_empty' => true, // Display container anyway even if no widget
-									'container_start'     => '<div class="col-md-12 collapse navbar-collapse" id="reporter_nav"><ul class="nav nav-tabs main_nav evo_container $wico_class$">',
-									'container_end'       => '</ul></div>',
 									'block_start'         => '',
 									'block_end'           => '',
 									'block_display_title' => false,
@@ -112,6 +112,8 @@ siteskin_include( '_site_body_header.inc.php' );
 								) );
 							// ----------------------------- END OF "Menu" CONTAINER -----------------------------
 						?>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -404,13 +406,11 @@ siteskin_include( '_site_body_header.inc.php' );
 	<footer class="row">
 		<div class="col-md-12 center">
 			<div class="main_footer">
+
 				<?php
 					// Display container and contents:
 					skin_container( NT_("Footer"), array(
 							// The following params will be used as defaults for widgets included in this container:
-							'container_display_if_empty' => true, // Display container anyway even if no widget
-							'container_start'     => '<div class="evo_container $wico_class$">',
-							'container_end'       => '</div>',
 						) );
 					// Note: Double quotes have been used around "Footer" only for test purposes.
 				?>

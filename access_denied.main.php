@@ -44,14 +44,12 @@ siteskin_include( '_site_body_header.inc.php' );
 	<div class="row">
 		<div class="col-md-12">
 
+<div class="PageTop">
 	<?php
 		// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
 		// Display container and contents:
 		skin_container( NT_('Page Top'), array(
 				// The following params will be used as defaults for widgets included in this container:
-				'container_display_if_empty' => true, // Display container anyway even if no widget
-				'container_start'     => '<div class="PageTop evo_container $wico_class$">',
-				'container_end'       => '</div>',
 				'block_start'         => '<div class="widget $wi_class$">',
 				'block_end'           => '</div>',
 				'block_display_title' => false,
@@ -62,15 +60,14 @@ siteskin_include( '_site_body_header.inc.php' );
 			) );
 		// ----------------------------- END OF "Page Top" CONTAINER -----------------------------
 	?>
+</div>
 
+<div class="pageHeader">
 	<?php
 		// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
 		// Display container and contents:
 		skin_container( NT_('Header'), array(
 				// The following params will be used as defaults for widgets included in this container:
-				'container_display_if_empty' => true, // Display container anyway even if no widget
-				'container_start'   => '<div class="pageHeader evo_container $wico_class$">',
-				'container_end'     => '</div>',
 				'block_start'       => '<div class="widget $wi_class$">',
 				'block_end'         => '</div>',
 				'block_title_start' => '<h1>',
@@ -78,6 +75,8 @@ siteskin_include( '_site_body_header.inc.php' );
 			) );
 		// ----------------------------- END OF "Header" CONTAINER -----------------------------
 	?>
+</div>
+
 		</div>
 	</div>
 
@@ -117,9 +116,6 @@ siteskin_include( '_site_body_header.inc.php' );
 		// Display container and contents:
 		skin_container( NT_("Footer"), array(
 				// The following params will be used as defaults for widgets included in this container:
-				'container_display_if_empty' => true, // Display container anyway even if no widget
-				'container_start'     => '<div class="evo_container $wico_class$">',
-				'container_end'       => '</div>',
 			) );
 		// Note: Double quotes have been used around "Footer" only for test purposes.
 	?>
