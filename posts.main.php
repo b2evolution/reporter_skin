@@ -40,7 +40,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				<?php
 					// ------------------------- "Page Top" CONTAINER EMBEDDED HERE --------------------------
 					// Display container and contents:
-					skin_container( NT_('Page Top'), array(
+					widget_container( 'page_top', array(
 							// The following params will be used as defaults for widgets included in this container:
 							'container_display_if_empty' => true, // Display container anyway even if no widget
 							'container_start'     => '<div class="coll-xs-12 coll-sm-12 col-md-4 col-md-push-8"><div class="PageTop evo_container $wico_class$">',
@@ -59,7 +59,7 @@ siteskin_include( '_site_body_header.inc.php' );
 				<?php
 					// ------------------------- "Header" CONTAINER EMBEDDED HERE --------------------------
 					// Display container and contents:
-					skin_container( NT_('Header'), array(
+					widget_container( 'header', array(
 							// The following params will be used as defaults for widgets included in this container:
 							'container_display_if_empty' => true, // Display container anyway even if no widget
 							'container_start'   => '<div class="coll-xs-12 col-sm-6 col-md-8 col-md-pull-4"><div class="pageHeader evo_container $wico_class$">',
@@ -90,7 +90,7 @@ siteskin_include( '_site_body_header.inc.php' );
 							// ------------------------- "Menu" CONTAINER EMBEDDED HERE --------------------------
 							// Display container and contents:
 							// Note: this container is designed to be a single <ul> list
-							skin_container( NT_('Menu'), array(
+							widget_container( 'menu', array(
 									// The following params will be used as defaults for widgets included in this container:
 									'container_display_if_empty' => true, // Display container anyway even if no widget
 									'container_start'     => '<div class="col-md-12 collapse navbar-collapse" id="reporter_nav"><ul class="nav nav-tabs main_nav evo_container $wico_class$">',
@@ -330,7 +330,7 @@ siteskin_include( '_site_body_header.inc.php' );
 	{
 		// ------------------------- "Sidebar" CONTAINER EMBEDDED HERE --------------------------
 		// Display container contents:
-		skin_container( NT_('Sidebar'), array(
+		widget_container( 'sidebar', array(
 				// The following (optional) params will be used as defaults for widgets included in this container:
 				'container_display_if_empty' => true, // Display container anyway even if no widget
 				'container_start'     => '<div id="sidebar" class="col-md-4 evo_container $wico_class$'.( $Skin->get_setting( 'layout' ) == 'right_sidebar' ? ' col-md-offset-1' : '' ).'"'.( $Skin->get_setting( 'layout' ) == 'left_sidebar' ? ' style="float:left;"' : '' ).'>',
@@ -373,7 +373,7 @@ siteskin_include( '_site_body_header.inc.php' );
 			<div class="main_footer">
 				<?php
 					// Display container and contents:
-					skin_container( NT_('Footer'), array(
+					widget_container( 'footer', array(
 							// The following params will be used as defaults for widgets included in this container:
 							'container_display_if_empty' => false, // If no widget, don't display container at all
 							'container_start'     => '<div class="evo_container $wico_class$">',
