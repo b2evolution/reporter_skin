@@ -45,7 +45,7 @@ class reporter_Skin extends Skin
 	 */
 	function get_default_type()
 	{
-		return 'normal';
+		return 'rwd';
 	}
 
 
