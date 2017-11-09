@@ -20,7 +20,7 @@ class reporter_Skin extends Skin
 	 * Skin version
 	 * @var string
 	 */
-	var $version = '1.0.0';
+	var $version = '7.0.0';
 	
 	
 	/**
