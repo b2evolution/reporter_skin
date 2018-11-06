@@ -21,8 +21,8 @@ class reporter_Skin extends Skin
 	 * @var string
 	 */
 	var $version = '7.0.0';
-	
-	
+
+
 	/**
 	 * Do we want to use style.min.css instead of style.css ?
 	 */
@@ -59,8 +59,8 @@ class reporter_Skin extends Skin
 	{
 		return 6;
 	}
-	
-	
+
+
 	/**
 	* Get supported collection kinds.
 	*
@@ -87,8 +87,8 @@ class reporter_Skin extends Skin
 
 		return $supported_kinds;
 	}
-	
-	
+
+
 	/**
 	 * Get the container codes of the skin main containers
 	 *
@@ -115,6 +115,83 @@ class reporter_Skin extends Skin
 				'user_profile_right'        => array( NT_('User Profile - Right'), 120 ),
 				'404_page'                  => array( NT_('404 Page'), 130 ),
 			);
+	}
+
+
+	/**
+	 * Get the declarations of the widgets that the skin recommends by default.
+	 *
+	 * The skin class defines a default set of widgets to used. Skins should override this.
+	 *
+	 * @param string Collection type: 'std', 'main', 'photo', 'group', 'forum', 'manual'
+	 * @param string Skin type: 'normal' - Standard, 'mobile' - Phone, 'tablet' - Tablet
+	 * @param array Additional params. Example value 'init_as_blog_b' => true
+	 * @return array Array of default widgets:
+	 *          - Key - Container code,
+	 *          - Value - array of widget arrays OR SPECIAL VALUES:
+	 *             - 'coll_type': Include this container only for collection kinds separated by comma, first char "-" means to exclude,
+	 *             - 'type': Container type, empty - main container, other values: 'sub', 'page', 'shared', 'shared-sub',
+	 *             - 'name': Container name,
+	 *             - 'order': Container order,
+	 *             - widget data array():
+	 *                - 0: Widget order (*mandatory field*),
+	 *                - 1: Widget code (*mandatory field*),
+	 *                - 'params' - Widget params(array or serialized string),
+	 *                - 'type' - Widget type(default = 'core', another value - 'plugin'),
+	 *                - 'enabled' - Boolean value; default is TRUE; FALSE to install the widget as disabled,
+	 *                - 'coll_type': Include this widget only for collection types separated by comma, first char "-" means to exclude,
+	 *                - 'skin_type': Include this widget only for skin types separated by comma, first char "-" means to exclude,
+	 *                - 'install' - Boolean value; default is TRUE; FALSE to skip this widget on install.
+	 */
+	function get_default_widgets( $coll_type, $skin_type = 'normal', $context = array() )
+	{
+		global $DB;
+
+		$context = array_merge( array(
+				'current_coll_ID'       => NULL,
+				'coll_home_ID'          => NULL,
+				'coll_blog_a_ID'        => NULL,
+				'coll_photoblog_ID'     => NULL,
+				'init_as_home'          => false,
+				'init_as_blog_a'        => false,
+				'init_as_blog_b'        => false,
+				'init_as_forums'        => false,
+				'init_as_events'        => false,
+				'install_test_features' => false,
+			), $context );
+
+		$default_widgets = array();
+
+		/* Item in List */
+		$default_widgets['item_in_list'] = array(
+			array( 10, 'item_title' ),
+			array( 20, 'item_visibility_badge' ),
+			array( 30, 'item_info_line', 'params' => array(
+					'flag_icon'      => false,
+					'permalink_icon' => true,
+					'edit_link'      => true,
+				) ),
+		);
+
+		/* Item Single Header */
+		$default_widgets['item_single_header'] = array(
+			array(  5, 'item_title' ),
+			array( 10, 'item_info_line', 'params' => array(
+					'flag_icon'      => false,
+					'permalink_icon' => false,
+					'date_format'    => 'none',
+					'time_format'    => 'none',
+					'category'       => false,
+				) ),
+		);
+
+		/* Item Page */
+		$default_widgets['item_page'] = array(
+			array( 10, 'item_content' ),
+			array( 15, 'item_attachments' ),
+		);
+
+		return $default_widgets;
 	}
 
 

@@ -105,31 +105,53 @@ siteskin_include( '_site_body_header.inc.php' );
   </div> <!-- End Single Menu -->
 
   <div class="single_bg_content">
+    <?php
+    // ------------------------- "Item Single - Header" CONTAINER EMBEDDED HERE --------------------------
+    // Display container contents:
+    widget_container( 'item_single_header', array(
+      'widget_context' => 'item',	// Signal that we are displaying within an Item
+      // The following (optional) params will be used as defaults for widgets included in this container:
+      'container_display_if_empty' => false, // If no widget, don't display container at all
+      // This will enclose each widget in a block:
+      'block_start' => '<div class="evo_widget $wi_class$">',
+      'block_end' => '</div>',
+      // This will enclose the title of each widget:
+      'block_title_start' => '<h3>',
+      'block_title_end' => '</h3>',
 
-      <?php
-        // ------------------------ TITLE FOR THE CURRENT REQUEST ------------------------
-        request_title( array(
-            'title_before'      => '<h2 class="entry-title-full">',
-            'title_after'       => '<span></span></h2>',
-            'title_none'        => '',
-            'glue'              => ' - ',
-            'title_single_disp' => true,
-            'format'            => 'htmlbody',
-            'register_text'     => '',
-            'login_text'        => '',
-            'lostpassword_text' => '',
-            'account_activation' => '',
-            'msgform_text'      => '',
-          ) );
-        // ----------------------------- END OF REQUEST TITLE ----------------------------
-        ?>
-        <p> By
-          <?php
-              $Item->author( array(
-              // 'link_text' => $params['author_link_text']
-            ) );
-           ?>
-        </p>
+      // Template params for "Item Title" widget:
+      'widget_item_title_params'  => array(
+          'before' => '<h2 class="entry-title-full">',
+          'after' => '</h2>',
+        ),
+      // Template params for "Item Visibility Badge" widget:
+      'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
+      'widget_item_visibility_badge_template' => '<div class="center"><div class="evo_status evo_status__$status$ badge" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+      // Template params for "Item Info Line" widget:
+      'widget_item_info_line_before' => '',
+      'widget_item_info_line_after'  => '',
+      'widget_item_info_line_params' => array(
+          'before_flag'         => '',
+          'after_flag'          => ' ',
+          'before_permalink'    => '',
+          'after_permalink'     => ' ',
+          'before_author'       => 'By ',
+          'after_author'        => '',
+          'before_post_time'    => 'Posted on <span>',
+          'after_post_time'     => '</span>',
+          'before_categories'   => 'in <span>',
+          'after_categories'    => '</span>',
+          'before_last_touched' => '<span class="text-muted"> &ndash; '.T_('Last touched').': ',
+          'after_last_touched'  => '</span>',
+          'before_last_updated' => '<span class="text-muted"> &ndash; '.T_('Contents updated').': ',
+          'after_last_updated'  => '</span>',
+          'before_edit_link'    => ' &bull; ',
+          'after_edit_link'     => '',
+          'format'              => '<p>$flag$$permalink$$post_time$$author$$categories$$edit_link$</p>',
+        ),
+    ) );
+    // ----------------------------- END OF "Item Single - Header" CONTAINER -----------------------------
+    ?>
   </div>
 
     <div class="divider"></div>
