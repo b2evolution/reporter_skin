@@ -125,8 +125,10 @@ siteskin_include( '_site_body_header.inc.php' );
           'after' => '</h2>',
         ),
       // Template params for "Item Visibility Badge" widget:
-      'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
-      'widget_item_visibility_badge_template' => '<div class="center"><div class="evo_status evo_status__$status$ badge" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+      'widget_item_visibility_badge_display' => ( ! $Item->is_intro() && $Item->status != 'published' ),
+      'widget_item_visibility_badge_params'  => array(
+          'template' => '<div class="center"><div class="evo_status evo_status__$status$ badge" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div></div>',
+        ),
       // Template params for "Item Info Line" widget:
       'widget_item_info_line_before' => '',
       'widget_item_info_line_after'  => '',

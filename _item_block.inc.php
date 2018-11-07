@@ -70,8 +70,10 @@ echo '<div class="styled_content_block">'; // Beginning of post display TODO: ge
 							'after' => $title_after,
 						),
 					// Template params for "Item Visibility Badge" widget:
-					'widget_item_visibility_badge_display'  => ( ! $Item->is_intro() && $Item->status != 'published' ),
-					'widget_item_visibility_badge_template' => '<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+					'widget_item_visibility_badge_display' => ( ! $Item->is_intro() && $Item->status != 'published' ),
+					'widget_item_visibility_badge_params'  => array(
+							'template' => '<div class="evo_status evo_status__$status$ badge pull-right" data-toggle="tooltip" data-placement="top" title="$tooltip_title$">$status_title$</div>',
+						),
 					// Template params for "Item Info Line" widget:
 					'widget_item_info_line_params' => array(
 							'before_flag'         => '',
